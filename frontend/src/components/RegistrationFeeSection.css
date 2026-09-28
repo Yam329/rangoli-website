@@ -1,0 +1,1653 @@
+/* =========================================================
+   RANGAVALLIKA - REVIEW & SUBMIT
+   Luxury Floral Theme
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.review-page {
+  min-height: 100vh;
+  padding: 0 5vw 55px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 247, 242, 0.92),
+      rgba(255, 252, 248, 0.96)
+    ),
+    url("/hero-banner-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: #123f55;
+
+  font-family: "DM Sans", sans-serif;
+
+  position: relative;
+  overflow-x: hidden;
+}
+
+
+/* Floral decorative glow */
+
+.review-page::before {
+  content: "";
+  position: fixed;
+
+  width: 450px;
+  height: 450px;
+
+  top: -220px;
+  left: -180px;
+
+  background: radial-gradient(
+    circle,
+    rgba(235, 25, 111, 0.10),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+
+.review-page::after {
+  content: "";
+  position: fixed;
+
+  width: 500px;
+  height: 500px;
+
+  bottom: -250px;
+  right: -200px;
+
+  background: radial-gradient(
+    circle,
+    rgba(0, 133, 151, 0.10),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.review-topbar {
+  max-width: 1250px;
+  margin: 0 auto;
+
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 5;
+}
+
+
+.review-brand {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+}
+
+
+.review-brand img {
+  width: 155px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+.review-home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 11px 20px;
+
+  border: 1px solid rgba(0, 108, 130, 0.18);
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  color: #07536c;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  backdrop-filter: blur(10px);
+
+  transition: all 0.25s ease;
+}
+
+
+.review-home-button span {
+  font-size: 17px;
+}
+
+
+.review-home-button:hover {
+  transform: translateY(-2px);
+
+  background: #ffffff;
+
+  border-color: rgba(0, 108, 130, 0.35);
+
+  box-shadow: 0 8px 22px rgba(0, 70, 90, 0.10);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.review-intro {
+  max-width: 1250px;
+  margin: 12px auto 8px;
+
+  text-align: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+.review-intro h1 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 19px;
+  font-weight: 600;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: #08718a;
+}
+
+
+.review-register {
+  margin-top: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  color: #e71970;
+}
+
+
+.review-register strong {
+  color: #08718a;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.review-progress {
+  max-width: 1120px;
+
+  margin: 28px auto 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 3;
+}
+
+
+.review-step {
+  display: grid;
+
+  grid-template-columns: 48px auto;
+  grid-template-rows: auto auto;
+
+  column-gap: 12px;
+
+  align-items: center;
+
+  min-width: 225px;
+}
+
+
+.review-circle {
+  grid-row: 1 / span 2;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e71970;
+
+  color: #fff;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  box-shadow:
+    0 8px 20px rgba(231, 25, 112, 0.22),
+    0 0 0 5px rgba(231, 25, 112, 0.07);
+}
+
+
+.review-step strong {
+  font-size: 14px;
+  font-weight: 700;
+
+  color: #12465c;
+}
+
+
+.review-step span {
+  margin-top: 2px;
+
+  font-size: 11px;
+
+  color: #7390a0;
+}
+
+
+.review-step.active strong {
+  color: #e71970;
+}
+
+
+.review-line {
+  width: 130px;
+  height: 1px;
+
+  margin: 0 18px;
+
+  background: #e71970;
+
+  opacity: 0.6;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.review-card {
+  width: min(1250px, 100%);
+
+  margin: 0 auto;
+
+  padding: 42px 38px 35px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.97),
+      rgba(255, 250, 248, 0.95)
+    );
+
+  border-radius: 32px;
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 30px 80px rgba(37, 86, 101, 0.10),
+    0 5px 25px rgba(231, 25, 112, 0.05);
+
+  position: relative;
+  z-index: 2;
+
+  overflow: hidden;
+}
+
+
+/* Decorative gold corner */
+
+.review-card::before {
+  content: "✦";
+
+  position: absolute;
+
+  top: 25px;
+  right: 35px;
+
+  color: #d9a62e;
+
+  font-size: 28px;
+
+  opacity: 0.65;
+}
+
+
+.review-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 180px;
+  height: 180px;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(231, 25, 112, 0.07),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.review-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  padding: 0 5px 25px;
+
+  border-bottom: 1px solid #edf0ef;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+.review-heading h2 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(36px, 4vw, 52px);
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  color: #104b64;
+}
+
+
+.review-heading h2::first-letter {
+  color: #104b64;
+}
+
+
+.review-heading p {
+  margin: 10px 0 0;
+
+  color: #718b99;
+
+  font-size: 14px;
+}
+
+
+.review-heading > span {
+  padding-bottom: 5px;
+
+  color: #78909c;
+
+  font-size: 11px;
+
+  text-align: right;
+}
+
+
+/* =========================================================
+   REVIEW COLUMNS
+========================================================= */
+
+.review-columns {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 22px;
+
+  margin-top: 30px;
+}
+
+
+/* =========================================================
+   SECTION CARDS
+========================================================= */
+
+.review-section {
+  min-height: 355px;
+
+  padding: 27px 27px 25px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.80);
+
+  border: 1px solid rgba(20, 77, 98, 0.10);
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition: all 0.25s ease;
+}
+
+
+.review-section:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 35px rgba(30, 78, 95, 0.07);
+}
+
+
+/* Pink participant card */
+
+.participant-review {
+  border-color: rgba(231, 25, 112, 0.13);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(255, 248, 250, 0.91)
+    );
+}
+
+
+/* Teal fee card */
+
+.package-review {
+  border-color: rgba(0, 139, 158, 0.15);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(246, 253, 252, 0.93)
+    );
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.review-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 23px;
+}
+
+
+.review-section-header h3 {
+  margin: 0;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 23px;
+
+  color: #124d64;
+}
+
+
+.review-section-header p {
+  margin: 5px 0 0;
+
+  color: #78919e;
+
+  font-size: 11px;
+}
+
+
+.review-section-header button {
+  border: 0;
+
+  padding: 9px 18px;
+
+  border-radius: 30px;
+
+  background: #edf8f7;
+
+  color: #08708a;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.review-section-header button:hover {
+  background: #dff2f0;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PARTICIPANT DATA
+========================================================= */
+
+.participant-data {
+  border: 1px solid rgba(15, 77, 96, 0.08);
+
+  border-radius: 18px;
+
+  padding: 5px 18px;
+
+  background: rgba(255, 255, 255, 0.55);
+}
+
+
+.data-row {
+  display: grid;
+
+  grid-template-columns: 145px 1fr;
+
+  align-items: center;
+
+  min-height: 42px;
+
+  border-bottom: 1px dashed #dfe7e8;
+}
+
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+
+.data-row span {
+  color: #77909e;
+
+  font-size: 11px;
+}
+
+
+.data-row strong {
+  color: #174b60;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  word-break: break-word;
+}
+
+
+.address-row {
+  min-height: 52px;
+}
+
+
+/* =========================================================
+   SELECTED REGISTRATION FEE
+========================================================= */
+
+.selected-registration-fee {
+  min-height: 100px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 18px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff7fa,
+      #fffdfd
+    );
+
+  border: 1px solid rgba(231, 25, 112, 0.18);
+
+  box-shadow:
+    inset 0 0 25px rgba(231, 25, 112, 0.025);
+}
+
+
+/* =========================================================
+   SYMBOL
+========================================================= */
+
+.registration-review-symbol {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fff9e7;
+
+  border: 5px solid #faedbd;
+
+  color: #d29b16;
+
+  font-size: 20px;
+
+  box-shadow:
+    0 5px 15px rgba(200, 150, 30, 0.12);
+}
+
+
+/* =========================================================
+   REGISTRATION INFO
+========================================================= */
+
+.registration-review-info {
+  flex: 1;
+
+  padding-left: 17px;
+}
+
+
+.registration-review-info span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #82929b;
+
+  font-size: 10px;
+}
+
+
+.registration-review-info strong {
+  display: block;
+
+  color: #145269;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.registration-review-price {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 1px;
+}
+
+
+.registration-review-price small {
+  color: #8c8c8c;
+
+  font-size: 11px;
+
+  text-decoration: line-through;
+}
+
+
+.registration-review-price strong {
+  color: #e71970;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 31px;
+
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   COUPON
+========================================================= */
+
+.review-coupon-box {
+  margin-top: 14px;
+
+  min-height: 62px;
+
+  padding: 12px 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #effcf4,
+      #e8f8ee
+    );
+
+  border: 1px solid #c6ebd4;
+}
+
+
+.review-coupon-left {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.review-coupon-icon {
+  width: 31px;
+  height: 31px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #24a96c;
+
+  color: white;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  box-shadow: 0 4px 10px rgba(36, 169, 108, 0.18);
+}
+
+
+.review-coupon-left span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #3d956b;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+
+.review-coupon-left strong {
+  display: block;
+
+  color: #137a52;
+
+  font-size: 12px;
+
+  letter-spacing: 0.5px;
+}
+
+
+.review-coupon-saving {
+  text-align: right;
+}
+
+
+.review-coupon-saving small {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #52906f;
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+
+.review-coupon-saving strong {
+  color: #18935e;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.review-total-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 17px;
+
+  padding: 14px 0 0;
+
+  border-top: 1px dashed #d9e2e3;
+}
+
+
+.review-total-row span {
+  color: #315f70;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.review-total-row strong {
+  color: #e71970;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 30px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.terms-box {
+  margin-top: 25px;
+
+  min-height: 90px;
+
+  padding: 18px 21px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  border-radius: 19px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(245, 252, 250, 0.95),
+      rgba(250, 253, 252, 0.95)
+    );
+
+  border: 1px solid rgba(0, 130, 145, 0.12);
+}
+
+
+.terms-box label {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  cursor: pointer;
+
+  flex: 1;
+}
+
+
+/* Hide actual checkbox */
+
+.terms-box input {
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* Custom checkbox */
+
+.custom-check {
+  width: 23px;
+  height: 23px;
+
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  border-radius: 6px;
+
+  border: 1.5px solid #bfd4d6;
+
+  background: white;
+
+  position: relative;
+
+  transition: all 0.2s ease;
+}
+
+
+.terms-box input:checked + .custom-check {
+  background: #e71970;
+
+  border-color: #e71970;
+
+  box-shadow:
+    0 5px 12px rgba(231, 25, 112, 0.22);
+}
+
+
+.terms-box input:checked + .custom-check::after {
+  content: "✓";
+
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+.terms-content h3 {
+  margin: 0 0 5px;
+
+  color: #164e63;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+.terms-content p {
+  max-width: 750px;
+
+  margin: 0;
+
+  color: #78909b;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   TERMS LINK
+========================================================= */
+
+.terms-link {
+  flex-shrink: 0;
+
+  padding: 12px 18px;
+
+  border: 1px solid rgba(0, 125, 145, 0.16);
+
+  border-radius: 30px;
+
+  background: white;
+
+  color: #08718a;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.terms-link:hover {
+  background: #eefaf9;
+
+  border-color: rgba(0, 125, 145, 0.28);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.review-actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 20px;
+}
+
+
+/* =========================================================
+   PREVIOUS BUTTON
+========================================================= */
+
+.review-back {
+  min-width: 190px;
+
+  height: 52px;
+
+  padding: 0 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  border: 1.5px solid #1790a5;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  color: #12627a;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+
+.review-back span {
+  font-size: 20px;
+}
+
+
+.review-back:hover {
+  color: white;
+
+  background: #12839a;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(18, 131, 154, 0.20);
+}
+
+
+/* =========================================================
+   PAYMENT BUTTON
+========================================================= */
+
+.payment-button {
+  min-width: 350px;
+
+  height: 55px;
+
+  padding: 0 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  border: none;
+
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ed176e,
+      #ef2379
+    );
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(231, 25, 112, 0.25);
+
+  transition: all 0.25s ease;
+}
+
+
+.payment-button span {
+  font-size: 22px;
+
+  transition: transform 0.25s ease;
+}
+
+
+.payment-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 17px 38px rgba(231, 25, 112, 0.32);
+}
+
+
+.payment-button:hover:not(:disabled) span {
+  transform: translateX(5px);
+}
+
+
+/* Disabled */
+
+.payment-button:disabled {
+  background: #d8dfe0;
+
+  color: #ffffff;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .review-page {
+    padding: 0 25px 45px;
+  }
+
+
+  .review-columns {
+    grid-template-columns: 1fr;
+  }
+
+
+  .review-section {
+    min-height: auto;
+  }
+
+
+  .review-progress {
+    margin-bottom: 30px;
+  }
+
+
+  .review-line {
+    width: 70px;
+    margin: 0 10px;
+  }
+
+
+  .review-step {
+    min-width: auto;
+  }
+
+
+  .review-step strong {
+    font-size: 12px;
+  }
+
+
+  .review-step span {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .review-page {
+    padding: 0 14px 35px;
+
+    background-attachment: scroll;
+  }
+
+
+  /* Header */
+
+  .review-topbar {
+    height: 70px;
+  }
+
+
+  .review-brand img {
+    width: 115px;
+  }
+
+
+  .review-home-button {
+    padding: 8px 13px;
+
+    font-size: 10px;
+  }
+
+
+  /* Intro */
+
+  .review-intro {
+    margin-top: 8px;
+  }
+
+
+  .review-intro h1 {
+    font-size: 16px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .review-register {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+  }
+
+
+  /* Progress */
+
+  .review-progress {
+    margin: 25px auto 30px;
+
+    justify-content: space-between;
+  }
+
+
+  .review-step {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    text-align: center;
+  }
+
+
+  .review-circle {
+    width: 39px;
+    height: 39px;
+
+    font-size: 13px;
+  }
+
+
+  .review-step strong {
+    font-size: 9px;
+  }
+
+
+  .review-step span {
+    display: none;
+  }
+
+
+  .review-line {
+    flex: 1;
+
+    width: auto;
+
+    margin: 0 7px;
+  }
+
+
+  /* Main */
+
+  .review-card {
+    padding: 28px 16px 25px;
+
+    border-radius: 24px;
+  }
+
+
+  .review-card::before {
+    top: 17px;
+    right: 18px;
+
+    font-size: 20px;
+  }
+
+
+  /* Heading */
+
+  .review-heading {
+    display: block;
+
+    padding-bottom: 20px;
+  }
+
+
+  .review-heading h2 {
+    font-size: 35px;
+  }
+
+
+  .review-heading p {
+    font-size: 11px;
+
+    line-height: 1.5;
+  }
+
+
+  .review-heading > span {
+    display: none;
+  }
+
+
+  /* Columns */
+
+  .review-columns {
+    margin-top: 22px;
+
+    gap: 16px;
+  }
+
+
+  .review-section {
+    padding: 20px 16px;
+
+    border-radius: 19px;
+  }
+
+
+  .review-section-header h3 {
+    font-size: 19px;
+  }
+
+
+  .review-section-header p {
+    font-size: 9px;
+  }
+
+
+  .review-section-header button {
+    padding: 7px 12px;
+
+    font-size: 9px;
+  }
+
+
+  /* Participant */
+
+  .participant-data {
+    padding: 3px 12px;
+
+    border-radius: 14px;
+  }
+
+
+  .data-row {
+    grid-template-columns: 100px 1fr;
+
+    min-height: 39px;
+  }
+
+
+  .data-row span {
+    font-size: 9px;
+  }
+
+
+  .data-row strong {
+    font-size: 10px;
+  }
+
+
+  /* Fee */
+
+  .selected-registration-fee {
+    padding: 14px;
+
+    min-height: 85px;
+  }
+
+
+  .registration-review-symbol {
+    width: 42px;
+    height: 42px;
+
+    border-width: 4px;
+
+    font-size: 17px;
+  }
+
+
+  .registration-review-info {
+    padding-left: 10px;
+  }
+
+
+  .registration-review-info span {
+    font-size: 8px;
+  }
+
+
+  .registration-review-info strong {
+    font-size: 14px;
+  }
+
+
+  .registration-review-price strong {
+    font-size: 25px;
+  }
+
+
+  .registration-review-price small {
+    font-size: 9px;
+  }
+
+
+  /* Coupon */
+
+  .review-coupon-box {
+    padding: 10px 12px;
+  }
+
+
+  .review-coupon-icon {
+    width: 27px;
+    height: 27px;
+
+    font-size: 14px;
+  }
+
+
+  .review-coupon-left {
+    gap: 8px;
+  }
+
+
+  .review-coupon-left span {
+    font-size: 8px;
+  }
+
+
+  .review-coupon-left strong {
+    font-size: 10px;
+  }
+
+
+  .review-coupon-saving strong {
+    font-size: 14px;
+  }
+
+
+  /* Total */
+
+  .review-total-row {
+    margin-top: 14px;
+
+    padding-top: 13px;
+  }
+
+
+  .review-total-row span {
+    font-size: 11px;
+  }
+
+
+  .review-total-row strong {
+    font-size: 25px;
+  }
+
+
+  /* Terms */
+
+  .terms-box {
+    display: block;
+
+    padding: 16px;
+
+    margin-top: 17px;
+  }
+
+
+  .terms-content h3 {
+    font-size: 12px;
+  }
+
+
+  .terms-content p {
+    font-size: 9px;
+  }
+
+
+  .terms-link {
+    margin-top: 14px;
+
+    width: 100%;
+
+    padding: 10px;
+
+    font-size: 10px;
+  }
+
+
+  /* Actions */
+
+  .review-actions {
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 17px;
+  }
+
+
+  .review-back,
+  .payment-button {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+
+  .review-back {
+    height: 48px;
+  }
+
+
+  .payment-button {
+    height: 52px;
+
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .review-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .review-card {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+
+  .review-heading h2 {
+    font-size: 30px;
+  }
+
+
+  .review-step strong {
+    font-size: 8px;
+  }
+
+
+  .review-circle {
+    width: 35px;
+    height: 35px;
+  }
+
+
+  .review-line {
+    margin: 0 4px;
+  }
+
+
+  .data-row {
+    grid-template-columns: 90px 1fr;
+  }
+
+
+  .registration-review-price strong {
+    font-size: 22px;
+  }
+}

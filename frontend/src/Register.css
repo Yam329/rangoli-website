@@ -1,0 +1,2858 @@
+.register-page {
+  min-height: 100vh;
+  position: relative;
+  padding: 24px 0 80px;
+  overflow-x: hidden;
+
+  background-image: url("/hero-banner-bg2.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+/* ================= HEADER ================= */
+
+.register-topbar {
+  width: min(1380px, calc(100% - 90px));
+  min-height: 72px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 5;
+}
+
+.register-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.register-brand img {
+  width: 250px;
+  height: auto;
+  display: block;
+  padding: 9px 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.82);
+  box-shadow: 0 8px 25px rgba(74,48,25,0.10);
+  backdrop-filter: blur(6px);
+}
+
+.top-home-button {
+  height: 46px;
+  padding: 0 28px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: 1.5px solid #078499;
+  border-radius: 26px;
+
+  background: white;
+  color: #174d65;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.top-home-button span {
+  font-size: 17px;
+}
+
+.top-home-button:hover {
+  background: #078499;
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+/* ================= TITLE ================= */
+
+.register-intro {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: min(900px, calc(100% - 40px));
+  margin: 14px auto 24px;
+  padding: 10px 20px 4px;
+  border-radius: 30px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.52), rgba(255,255,255,0.16));
+  backdrop-filter: blur(2px);
+}
+
+.register-intro h1 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(60px, 6vw, 82px);
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+
+  color: #df1974;
+}
+
+.register-now {
+  margin-top: 9px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 29px;
+  font-weight: 700;
+
+  letter-spacing: 10px;
+
+  color: #078499;
+}
+
+.register-now strong {
+  color: #078499;
+}
+
+.register-intro::after {
+  content: "Be a Part of Rangavallika";
+  display: block;
+  margin-top: 8px;
+  color: #174d65;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+
+/* ================= PROGRESS ================= */
+
+.register-progress {
+  width: min(980px, calc(100% - 70px));
+
+  margin: 0 auto 30px;
+  padding: 12px 24px 10px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.66);
+  box-shadow: 0 10px 30px rgba(70,45,25,0.08);
+  backdrop-filter: blur(7px);
+  position: relative;
+  z-index: 3;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    120px
+    1fr
+    120px
+    1fr;
+
+  align-items: start;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.progress-circle {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 2px solid #cbd7de;
+
+  background: white;
+
+  color: #466477;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.progress-step.active .progress-circle {
+  background: #df1974;
+  border-color: #df1974;
+  color: white;
+
+  box-shadow:
+    0 8px 20px rgba(223, 25, 116, 0.20);
+}
+
+.progress-step strong {
+  margin-top: 8px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  color: #174d65;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+}
+
+.progress-step.active strong {
+  color: #df1974;
+}
+
+.progress-step span {
+  margin-top: 2px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  color: #557180;
+}
+
+.progress-line {
+  height: 2px;
+
+  margin-top: 22px;
+
+  background: #d8e0e5;
+}
+
+.progress-line.active-line {
+  background:
+    linear-gradient(
+      90deg,
+      #df1974,
+      #dfa00c
+    );
+}
+
+
+/* ================= LARGE CARD ================= */
+
+.register-card {
+  width: min(1180px, calc(100% - 90px));
+
+  min-height: 570px;
+
+  margin: 0 auto;
+
+  padding: 30px 40px 35px;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border:
+    1px solid rgba(30, 85, 100, 0.08);
+
+  box-shadow:
+    0 28px 75px rgba(55, 39, 24, 0.18);
+
+  position: relative;
+  z-index: 4;
+}
+
+
+/* ================= CARD HEADER ================= */
+
+.participant-heading {
+  min-height: 82px;
+  position: relative;
+  overflow: hidden;
+
+  padding: 16px 23px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(100deg, #fff0f7, #fffafd);
+  border: 1px solid rgba(223,25,116,0.08);
+}
+
+.participant-heading::before,
+.participant-heading::after {
+  content: "✦";
+  position: absolute;
+  color: #d9a629;
+  font-size: 25px;
+  opacity: 0.7;
+}
+
+.participant-heading::before { left: 18px; top: 12px; }
+.participant-heading::after { right: 18px; top: 12px; }
+
+
+.participant-title {
+  position: relative;
+  z-index: 1;
+  padding-left: 12px;
+}
+
+.participant-title h2 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 33px;
+
+  line-height: 1.05;
+
+  color: #174f68;
+}
+
+.participant-title p {
+  margin: 6px 0 0;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  color: #718794;
+}
+
+.mandatory-text {
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  color: #607a89;
+}
+
+.mandatory-text b {
+  color: #df1974;
+}
+
+
+/* ================= FORM ================= */
+
+.registration-form {
+  margin-top: 27px;
+}
+
+.register-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 23px 30px;
+}
+
+.register-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #174d65;
+}
+
+.register-field label span {
+  color: #df1974;
+}
+
+
+/* ================= CLEAN INPUT BOX ================= */
+
+.field-box {
+  position: relative;
+
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d3dfe5;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field-box:focus-within {
+  border-color: #078fa0;
+
+  box-shadow:
+    0 0 0 4px rgba(7, 143, 160, 0.07);
+}
+
+
+/* NO DOTS / NO ICONS */
+
+.field-box input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 18px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #294f65;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+}
+
+.field-box input::placeholder {
+  color: #9aaab5;
+}
+
+
+/* ================= SELECT ================= */
+
+.field-box select {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 45px 0 18px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #294f65;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+
+  cursor: pointer;
+
+  appearance: none;
+}
+
+.field-box select:disabled {
+  color: #9aaab5;
+  cursor: not-allowed;
+}
+
+.select-arrow {
+  position: absolute;
+
+  right: 17px;
+
+  color: #174d65;
+
+  font-size: 18px;
+
+  pointer-events: none;
+}
+
+
+/* ================= MOBILE COUNTER ================= */
+
+.counter {
+  position: absolute;
+
+  right: 13px;
+  bottom: 7px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 8px;
+
+  color: #748a97;
+}
+
+
+/* ================= ADDRESS ================= */
+
+.address-field {
+  margin-top: 23px;
+}
+
+.textarea-box {
+  height: 110px;
+
+  align-items: flex-start;
+}
+
+.field-box textarea {
+  width: 100%;
+  height: 100%;
+
+  padding: 16px 18px;
+
+  box-sizing: border-box;
+
+  resize: none;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #294f65;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+}
+
+.field-box textarea::placeholder {
+  color: #9aaab5;
+}
+
+.address-counter {
+  position: absolute;
+
+  right: 14px;
+  bottom: 8px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 9px;
+
+  color: #748a97;
+}
+
+
+/* ================= BEFORE CONTINUE ================= */
+
+.before-continue {
+  margin-top: 21px;
+
+  padding: 17px 20px;
+
+  border: 1px solid #f0afd0;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #fff3f9,
+      #fffafd
+    );
+}
+
+.before-continue h3 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 19px;
+
+  color: #df1974;
+}
+
+.before-continue p {
+  margin: 5px 0 0;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+
+  color: #718794;
+}
+
+
+/* ================= ACTIONS ================= */
+
+.register-actions {
+  margin-top: 21px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.back-button {
+  height: 54px;
+
+  min-width: 210px;
+
+  padding: 0 28px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border: 1.5px solid #078fa0;
+
+  border-radius: 28px;
+
+  background: white;
+
+  color: #087589;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.back-button span {
+  font-size: 18px;
+}
+
+.back-button:hover {
+  background: #078fa0;
+  color: white;
+}
+
+.continue-button {
+  height: 56px;
+
+  min-width: 330px;
+
+  padding: 0 32px;
+
+  border: none;
+
+  border-radius: 29px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #df1974,
+      #d21c86
+    );
+
+  color: white;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 11px 25px rgba(215, 25, 115, 0.23);
+}
+
+.continue-button span {
+  margin-left: 13px;
+
+  font-size: 21px;
+}
+
+.continue-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 30px rgba(215, 25, 115, 0.29);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+  .register-topbar {
+    width: calc(100% - 25px);
+    height: 65px;
+  }
+
+  .register-brand img {
+    width: 175px;
+    padding: 7px 12px;
+  }
+
+  .top-home-button {
+    height: 38px;
+    padding: 0 14px;
+    font-size: 9px;
+  }
+
+  .register-intro {
+    margin-top: 8px;
+  }
+
+  .register-intro h1 {
+    font-size: 48px;
+  }
+
+  .register-now {
+    font-size: 20px;
+    letter-spacing: 5px;
+  }
+
+  .register-intro::after {
+    font-size: 15px;
+  }
+
+  .register-progress {
+    width: calc(100% - 20px);
+    padding: 9px 8px 8px;
+
+    grid-template-columns:
+      1fr
+      30px
+      1fr
+      30px
+      1fr;
+
+    margin-bottom: 20px;
+  }
+
+  .progress-circle {
+    width: 36px;
+    height: 36px;
+    font-size: 11px;
+  }
+
+  .progress-line {
+    margin-top: 17px;
+  }
+
+  .progress-step strong {
+    font-size: 8px;
+  }
+
+  .progress-step span {
+    display: none;
+  }
+
+  .register-card {
+    width: calc(100% - 16px);
+
+    min-height: auto;
+
+    padding: 18px 15px 22px;
+
+    border-radius: 20px;
+  }
+
+  .participant-heading {
+    min-height: 65px;
+
+    padding: 12px 14px;
+  }
+
+  .participant-title h2 {
+    font-size: 23px;
+  }
+
+  .participant-title p {
+    font-size: 8px;
+  }
+
+  .mandatory-text {
+    display: none;
+  }
+
+  .registration-form {
+    margin-top: 18px;
+  }
+
+  .register-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .register-field label {
+    font-size: 10px;
+  }
+
+  .field-box {
+    height: 50px;
+  }
+
+  .address-field {
+    margin-top: 15px;
+  }
+
+  .textarea-box {
+    height: 100px;
+  }
+
+  .before-continue {
+    padding: 14px;
+  }
+
+  .before-continue h3 {
+    font-size: 17px;
+  }
+
+  .before-continue p {
+    font-size: 8px;
+  }
+
+  .register-actions {
+    flex-direction: column-reverse;
+    gap: 11px;
+  }
+
+  .back-button,
+  .continue-button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+/* =========================================================
+   DATE OF BIRTH
+========================================================= */
+
+.register-field input[type="date"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #174c68;
+  font-family: inherit;
+  font-size: 15px;
+  padding: 0;
+}
+
+.register-field input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   PHOTO UPLOAD
+========================================================= */
+
+.photo-field {
+  margin-top: 24px;
+}
+
+.photo-field > label {
+  display: block;
+  margin-bottom: 9px;
+}
+
+.photo-upload-box {
+  width: 100%;
+  min-height: 155px;
+
+  border: 1.5px dashed #ed4b92;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 239, 247, 0.9),
+      rgba(255, 250, 253, 0.95)
+    );
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.photo-upload-box:hover {
+  border-color: #d91472;
+  background: #fff5fa;
+  transform: translateY(-1px);
+}
+
+.photo-upload-box.photo-selected {
+  cursor: default;
+  border-style: solid;
+  background: #fffafd;
+}
+
+.photo-upload-content {
+  text-align: center;
+  padding: 25px;
+}
+
+.photo-upload-icon {
+  width: 48px;
+  height: 48px;
+
+  margin: 0 auto 12px;
+
+  border-radius: 50%;
+
+  background: #ffe3ef;
+  color: #e51b77;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.photo-upload-content h4 {
+  margin: 0 0 6px;
+
+  color: #174c68;
+  font-size: 16px;
+}
+
+.photo-upload-content p {
+  margin: 0 0 7px;
+
+  color: #70899a;
+  font-size: 14px;
+}
+
+.photo-upload-content p span {
+  color: #e51b77;
+  font-weight: 700;
+}
+
+.photo-upload-content small {
+  color: #8499a7;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   PHOTO PREVIEW
+========================================================= */
+
+.photo-preview-content {
+  width: 100%;
+
+  padding: 18px 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.participant-photo-preview {
+  width: 105px;
+  height: 120px;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+
+  border: 2px solid #f1d4e2;
+
+  background: #f7f7f7;
+}
+
+.photo-preview-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.photo-preview-info strong {
+  color: #16866f;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.photo-preview-info p {
+  margin: 0 0 12px;
+
+  color: #71899a;
+  font-size: 13px;
+
+  max-width: 300px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.change-photo-button {
+  border: 1px solid #159ab0;
+
+  background: white;
+
+  color: #078aa2;
+
+  padding: 8px 16px;
+
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.change-photo-button:hover {
+  background: #eafaff;
+}
+
+.photo-required-note {
+  margin: 8px 2px 0;
+
+  color: #8194a0;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .photo-preview-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .photo-preview-info {
+    align-items: center;
+  }
+
+  .photo-upload-box {
+    min-height: 180px;
+  }
+
+}
+/* =========================================================
+   FINAL DESKTOP ONE-SCREEN REGISTRATION LAYOUT
+   No page scrolling on normal desktop screens
+========================================================= */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.register-page {
+  min-height: 100vh;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 10px 0 12px;
+  overflow: hidden;
+  background-image: url("/hero-banner-bg2.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ---------- TOP BAR ---------- */
+
+.register-topbar {
+  width: min(1180px, calc(100% - 70px));
+  height: 54px;
+  min-height: 54px;
+  margin: 0 auto;
+}
+
+.register-brand img {
+  width: 205px;
+  padding: 6px 14px;
+  border-radius: 15px;
+}
+
+.top-home-button {
+  height: 38px;
+  padding: 0 22px;
+  font-size: 11px;
+}
+
+/* ---------- TITLE ---------- */
+
+.register-intro {
+  width: min(700px, calc(100% - 40px));
+  margin: 2px auto 8px;
+  padding: 3px 16px 5px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.40);
+  backdrop-filter: blur(3px);
+}
+
+.register-intro h1 {
+  font-size: clamp(48px, 5vw, 68px);
+  line-height: .86;
+  letter-spacing: -1.5px;
+}
+
+.register-now {
+  margin-top: 5px;
+  font-size: 21px;
+  letter-spacing: 7px;
+}
+
+.register-intro::after {
+  margin-top: 4px;
+  font-size: 15px;
+}
+
+/* ---------- PROGRESS ---------- */
+
+.register-progress {
+  width: min(850px, calc(100% - 70px));
+  margin: 0 auto 9px;
+  padding: 7px 20px 6px;
+  border-radius: 18px;
+  grid-template-columns: 1fr 90px 1fr 90px 1fr;
+}
+
+.progress-circle {
+  width: 36px;
+  height: 36px;
+  font-size: 12px;
+}
+
+.progress-step strong {
+  margin-top: 4px;
+  font-size: 10px;
+}
+
+.progress-step span {
+  font-size: 8px;
+}
+
+.progress-line {
+  margin-top: 17px;
+}
+
+/* ---------- MAIN CARD ---------- */
+
+.register-card {
+  width: min(1120px, calc(100% - 70px));
+  min-height: 0;
+  height: auto;
+  margin: 0 auto;
+  padding: 15px 24px 14px;
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+/* ---------- CARD HEADER ---------- */
+
+.participant-heading {
+  min-height: 55px;
+  height: 55px;
+  padding: 7px 17px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.participant-heading::before,
+.participant-heading::after {
+  font-size: 18px;
+  top: 8px;
+}
+
+.participant-heading::before { left: 13px; }
+.participant-heading::after { right: 13px; }
+
+.participant-title {
+  padding-left: 9px;
+}
+
+.participant-title h2 {
+  font-size: 25px;
+}
+
+.participant-title p {
+  margin-top: 2px;
+  font-size: 8px;
+}
+
+.mandatory-text {
+  font-size: 8px;
+}
+
+/* ---------- FORM: TRUE 3-COLUMN LAYOUT ---------- */
+
+.registration-form {
+  margin-top: 11px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 20px;
+  row-gap: 7px;
+  align-items: start;
+}
+
+.register-grid {
+  display: contents;
+}
+
+.register-field {
+  min-width: 0;
+}
+
+.register-field label {
+  margin-bottom: 4px;
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.field-box {
+  height: 39px;
+  border-radius: 9px;
+}
+
+.field-box input,
+.field-box select,
+.register-field input[type="date"] {
+  font-size: 10px;
+}
+
+.field-box input {
+  padding: 0 12px;
+}
+
+.field-box select {
+  padding: 0 35px 0 12px;
+}
+
+.select-arrow {
+  right: 11px;
+  font-size: 14px;
+}
+
+.counter {
+  right: 9px;
+  bottom: 4px;
+  font-size: 7px;
+}
+
+/* Address = 2 columns, photo = 1 column */
+.address-field {
+  grid-column: span 2;
+  margin-top: 0;
+}
+
+.photo-field {
+  grid-column: span 1;
+  margin-top: 0;
+}
+
+.textarea-box {
+  height: 72px;
+}
+
+.field-box textarea {
+  padding: 9px 12px;
+  font-size: 10px;
+}
+
+.address-counter {
+  right: 10px;
+  bottom: 5px;
+  font-size: 7px;
+}
+
+/* ---------- PHOTO ---------- */
+
+.photo-upload-box {
+  min-height: 72px;
+  height: 72px;
+  border-radius: 10px;
+}
+
+.photo-upload-content {
+  padding: 5px;
+}
+
+.photo-upload-icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 4px;
+  font-size: 15px;
+}
+
+.photo-upload-content h4 {
+  margin-bottom: 2px;
+  font-size: 10px;
+}
+
+.photo-upload-content p {
+  margin-bottom: 2px;
+  font-size: 8px;
+}
+
+.photo-upload-content small {
+  font-size: 7px;
+}
+
+.photo-required-note {
+  margin: 2px 0 0;
+  font-size: 7px;
+}
+
+/* ---------- BEFORE CONTINUE ---------- */
+
+.before-continue {
+  grid-column: 1 / -1;
+  margin-top: 0;
+  padding: 7px 12px;
+  border-radius: 9px;
+}
+
+.before-continue h3 {
+  font-size: 13px;
+}
+
+.before-continue p {
+  margin-top: 2px;
+  font-size: 7px;
+  line-height: 1.35;
+}
+
+/* ---------- ACTIONS ---------- */
+
+.register-actions {
+  grid-column: 1 / -1;
+  margin-top: 1px;
+  gap: 20px;
+}
+
+.back-button,
+.continue-button {
+  height: 37px;
+  min-width: 0;
+  border-radius: 20px;
+  font-size: 10px;
+}
+
+.back-button {
+  width: 210px;
+}
+
+.continue-button {
+  width: 300px;
+  box-shadow: 0 7px 18px rgba(215,25,115,.20);
+}
+
+.continue-button span {
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+/* ---------- SELECT / DATE ---------- */
+
+.register-field input[type="date"] {
+  font-size: 10px;
+}
+
+/* ---------- DESKTOP HEIGHT ADAPTATION ---------- */
+
+@media (max-height: 800px) and (min-width: 701px) {
+  .register-page {
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+
+  .register-topbar {
+    height: 48px;
+    min-height: 48px;
+  }
+
+  .register-brand img {
+    width: 185px;
+    padding: 5px 12px;
+  }
+
+  .top-home-button {
+    height: 34px;
+    padding: 0 18px;
+    font-size: 10px;
+  }
+
+  .register-intro {
+    margin-bottom: 5px;
+    padding: 1px 14px 3px;
+  }
+
+  .register-intro h1 {
+    font-size: 57px;
+  }
+
+  .register-now {
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
+
+  .register-intro::after {
+    font-size: 13px;
+  }
+
+  .register-progress {
+    margin-bottom: 6px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+  }
+
+  .progress-circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .register-card {
+    padding: 12px 22px 11px;
+  }
+
+  .participant-heading {
+    height: 50px;
+    min-height: 50px;
+  }
+
+  .participant-title h2 {
+    font-size: 23px;
+  }
+
+  .registration-form {
+    margin-top: 8px;
+    row-gap: 5px;
+  }
+
+  .field-box {
+    height: 36px;
+  }
+
+  .textarea-box,
+  .photo-upload-box {
+    height: 64px;
+  }
+
+  .textarea-box {
+    height: 64px;
+  }
+
+  .photo-upload-box {
+    min-height: 64px;
+  }
+
+  .photo-upload-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+
+  .before-continue {
+    padding: 5px 10px;
+  }
+
+  .register-actions {
+    margin-top: 0;
+  }
+
+  .back-button,
+  .continue-button {
+    height: 34px;
+  }
+}
+
+/* ---------- MOBILE: allow normal page scrolling ---------- */
+
+@media (max-width: 700px) {
+  .register-page {
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 30px;
+  }
+
+  .registration-form {
+    display: block;
+  }
+
+  .register-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .address-field,
+  .photo-field,
+  .before-continue,
+  .register-actions {
+    grid-column: auto;
+  }
+
+  .register-card {
+    height: auto;
+  }
+}
+
+
+/* =========================================================
+   FINAL DESKTOP FORM LAYOUT — NORMAL SIZE + NATURAL SCROLL
+/* =========================================================
+   FINAL FIX — ADDRESS + PHOTO SIDE BY SIDE
+   ========================================================= */
+
+@media (min-width: 701px) {
+
+  .registration-form {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    column-gap: 25px !important;
+    row-gap: 14px !important;
+    align-items: start !important;
+  }
+
+  /*
+     IMPORTANT:
+     Keep the complete register-grid as part of the same
+     layout instead of using display: contents.
+  */
+  .register-grid {
+    display: contents !important;
+  }
+
+  /* -------------------------
+     FIRST ROW
+     ------------------------- */
+
+  .register-grid > .register-field:nth-child(1) {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+  }
+
+  .register-grid > .register-field:nth-child(2) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+  }
+
+  .register-grid > .register-field:nth-child(3) {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+  }
+
+  /* -------------------------
+     SECOND ROW
+     ------------------------- */
+
+  .register-grid > .register-field:nth-child(4) {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+
+  .register-grid > .register-field:nth-child(5) {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+  }
+
+  .register-grid > .register-field:nth-child(6),
+  .register-grid > .pincode-field {
+    grid-column: 3 !important;
+    grid-row: 2 !important;
+  }
+
+  /* -------------------------
+     ADDRESS
+     ------------------------- */
+
+  .address-field {
+    grid-column: 1 / 3 !important;
+    grid-row: 3 !important;
+
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  /* -------------------------
+     PHOTO
+     ------------------------- */
+
+  .photo-field {
+    grid-column: 3 !important;
+    grid-row: 3 !important;
+
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  /* Same height */
+  .textarea-box {
+    height: 112px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .photo-upload-box {
+    height: 112px !important;
+    min-height: 112px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* -------------------------
+     BEFORE CONTINUE
+     ------------------------- */
+
+  .before-continue {
+    grid-column: 1 / -1 !important;
+    grid-row: 4 !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  /* -------------------------
+     BUTTONS
+     ------------------------- */
+
+  .register-actions {
+    grid-column: 1 / -1 !important;
+    grid-row: 5 !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+
+/* =========================================================
+   SHORT DESKTOP / LAPTOP
+   ========================================================= */
+
+@media (min-width: 701px) and (max-height: 800px) {
+
+  .registration-form {
+    row-gap: 10px !important;
+  }
+
+  .textarea-box,
+  .photo-upload-box {
+    height: 100px !important;
+    min-height: 100px !important;
+  }
+}
+/* =========================================================
+   FINAL FIX — ADDRESS + PHOTO SIDE BY SIDE
+   ========================================================= */
+
+@media (min-width: 701px) {
+
+  /* The wrapper containing Address + Photo */
+  .lower-form-grid {
+    grid-column: 1 / -1 !important;
+
+    display: grid !important;
+
+    /* Address = 2/3, Photo = 1/3 */
+    grid-template-columns: 2fr 1fr !important;
+
+    gap: 25px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    align-items: start !important;
+  }
+
+  /* Complete Address */
+  .lower-form-grid .address-field {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+  }
+
+  /* Photo */
+  .lower-form-grid .photo-field {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+  }
+
+  /* Same height */
+  .lower-form-grid .textarea-box {
+    height: 112px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .lower-form-grid .photo-upload-box {
+    height: 112px !important;
+    min-height: 112px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE — STACK ADDRESS + PHOTO
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .lower-form-grid {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .lower-form-grid .address-field,
+  .lower-form-grid .photo-field {
+    width: 100% !important;
+    margin: 0 0 15px 0 !important;
+  }
+
+}
+/* =========================================================
+   RANGAVALLIKA FINAL HEADER — NO STEPPER / NO SUBTITLE
+   ========================================================= */
+
+@media (min-width: 701px) {
+
+  /* -------------------------------------------------------
+     REMOVE 3-STEP PROGRESS
+     ------------------------------------------------------- */
+
+  .register-progress,
+  .registration-progress,
+  .progress-container,
+  .steps-container {
+    display: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     MAIN PAGE
+     ------------------------------------------------------- */
+
+  .register-page {
+    min-height: 100vh;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding-top: 18px !important;
+    padding-bottom: 40px !important;
+
+    background-image: url("/hero-banner-bg2.jpg");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+
+  /* -------------------------------------------------------
+     TOP BAR
+     ------------------------------------------------------- */
+
+  .register-topbar {
+    width: min(1380px, calc(100% - 100px)) !important;
+    height: 68px !important;
+    min-height: 68px !important;
+
+    margin: 0 auto !important;
+
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+  }
+
+
+  /* -------------------------------------------------------
+     LOGO
+     ------------------------------------------------------- */
+
+  .register-brand img {
+    width: 270px !important;
+    max-width: 270px !important;
+
+    padding: 10px 18px !important;
+
+    background: rgba(255,255,255,.94);
+
+    border-radius: 18px;
+
+    box-shadow:
+      0 10px 30px rgba(50,35,20,.13);
+
+    box-sizing: border-box;
+  }
+
+
+  /* -------------------------------------------------------
+     BACK HOME
+     ------------------------------------------------------- */
+
+  .top-home-button {
+    height: 48px !important;
+
+    padding: 0 28px !important;
+
+    border-radius: 28px !important;
+
+    background: rgba(255,255,255,.95) !important;
+
+    font-size: 13px !important;
+
+    margin-top: 2px !important;
+  }
+
+
+  /* -------------------------------------------------------
+     RANGAVALLIKA HEADER
+     ------------------------------------------------------- */
+
+  .register-intro {
+    width: min(900px, calc(100% - 100px)) !important;
+
+    margin: 0 auto 22px !important;
+
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+
+    backdrop-filter: none !important;
+
+    text-align: center;
+  }
+
+
+  /* BIG RANGAVALLIKA */
+
+  .register-intro h1 {
+    margin: 0 !important;
+
+    font-size: clamp(68px, 7vw, 100px) !important;
+
+    line-height: .95 !important;
+
+    letter-spacing: -2px !important;
+
+    color: #e31572 !important;
+
+    font-weight: 700 !important;
+  }
+
+
+  /* REGISTER NOW */
+
+  .register-now {
+    margin-top: 8px !important;
+
+    font-size: 25px !important;
+
+    line-height: 1 !important;
+
+    letter-spacing: 9px !important;
+
+    color: #087f91 !important;
+
+    font-weight: 700 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     REMOVE "BE A PART OF RANGAVALLIKA"
+     ------------------------------------------------------- */
+
+  .register-intro::after {
+    display: none !important;
+
+    content: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     PARTICIPANT CARD — MOVE DIRECTLY UNDER HEADER
+     ------------------------------------------------------- */
+
+  .register-card {
+    width: min(1160px, calc(100% - 90px)) !important;
+
+    margin: 0 auto !important;
+
+    padding: 20px 34px 22px !important;
+
+    border-radius: 27px !important;
+
+    background: rgba(255,255,255,.97) !important;
+
+    box-shadow:
+      0 25px 65px rgba(55,39,24,.17) !important;
+
+    box-sizing: border-box;
+  }
+
+
+  /* -------------------------------------------------------
+     PARTICIPANT DETAILS HEADER
+     ------------------------------------------------------- */
+
+  .participant-heading {
+    height: 70px !important;
+    min-height: 70px !important;
+
+    padding: 11px 22px !important;
+
+    border-radius: 14px !important;
+
+    box-sizing: border-box;
+  }
+
+  .participant-title h2 {
+    font-size: 31px !important;
+
+    line-height: 1.05 !important;
+  }
+
+  .participant-title p {
+    margin-top: 4px !important;
+
+    font-size: 10px !important;
+  }
+
+  .mandatory-text {
+    font-size: 10px !important;
+  }
+
+
+  /* =======================================================
+     FORM — 3 COLUMNS
+     ======================================================= */
+
+  .registration-form {
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr)) !important;
+
+    column-gap: 25px !important;
+
+    row-gap: 14px !important;
+
+    margin-top: 16px !important;
+
+    align-items: start !important;
+  }
+
+
+  /* =======================================================
+     ADDRESS + PHOTO
+     ======================================================= */
+
+  .lower-form-grid {
+    grid-column: 1 / -1 !important;
+
+    display: grid !important;
+
+    grid-template-columns: 2fr 1fr !important;
+
+    gap: 25px !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    align-items: start !important;
+  }
+
+
+  .lower-form-grid .address-field {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+  }
+
+
+  .lower-form-grid .photo-field {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+  }
+
+
+  .lower-form-grid .textarea-box {
+    width: 100% !important;
+
+    height: 125px !important;
+
+    box-sizing: border-box !important;
+  }
+
+
+  .lower-form-grid .photo-upload-box {
+    width: 100% !important;
+
+    height: 125px !important;
+
+    min-height: 125px !important;
+
+    box-sizing: border-box !important;
+  }
+
+
+  /* =======================================================
+     BEFORE YOU CONTINUE
+     ======================================================= */
+
+  .before-continue {
+    grid-column: 1 / -1 !important;
+
+    margin: 0 !important;
+
+    padding: 11px 16px !important;
+
+    border-radius: 11px !important;
+  }
+
+
+  .before-continue h3 {
+    font-size: 16px !important;
+  }
+
+
+  .before-continue p {
+    font-size: 9px !important;
+
+    margin-top: 3px !important;
+  }
+
+
+  /* =======================================================
+     BUTTONS
+     ======================================================= */
+
+  .register-actions {
+    grid-column: 1 / -1 !important;
+
+    display: flex !important;
+
+    justify-content: space-between !important;
+
+    align-items: center !important;
+
+    width: 100% !important;
+
+    margin: 0 !important;
+
+    padding-top: 1px !important;
+  }
+
+
+  .back-button {
+    height: 50px !important;
+
+    min-width: 210px !important;
+
+    font-size: 12px !important;
+  }
+
+
+  .continue-button {
+    height: 52px !important;
+
+    min-width: 320px !important;
+
+    font-size: 13px !important;
+  }
+}
+
+
+/* =========================================================
+   SHORT LAPTOP
+   ========================================================= */
+
+@media (min-width: 701px) and (max-height: 800px) {
+
+  .register-page {
+    padding-top: 10px !important;
+  }
+
+  .register-topbar {
+    height: 55px !important;
+    min-height: 55px !important;
+  }
+
+  .register-brand img {
+    width: 235px !important;
+  }
+
+  .register-intro h1 {
+    font-size: 70px !important;
+  }
+
+  .register-now {
+    font-size: 21px !important;
+  }
+
+  .register-card {
+    padding: 16px 28px 18px !important;
+  }
+
+  .participant-heading {
+    height: 62px !important;
+    min-height: 62px !important;
+  }
+
+  .lower-form-grid .textarea-box,
+  .lower-form-grid .photo-upload-box {
+    height: 105px !important;
+    min-height: 105px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .register-progress,
+  .registration-progress,
+  .progress-container,
+  .steps-container {
+    display: none !important;
+  }
+
+  .register-intro::after {
+    display: none !important;
+  }
+
+  .register-intro {
+    margin-bottom: 20px !important;
+  }
+
+  .lower-form-grid {
+    display: block !important;
+  }
+
+  .lower-form-grid .address-field,
+  .lower-form-grid .photo-field {
+    width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+}
+/* =========================================================
+   FINAL SIZE FIX — MAKE FORM READABLE & PREMIUM
+   ========================================================= */
+
+@media (min-width: 701px) {
+
+  /* MAIN CARD */
+  .register-card {
+    width: min(1200px, calc(100% - 70px)) !important;
+    padding: 28px 38px 28px !important;
+    border-radius: 28px !important;
+  }
+
+  /* PARTICIPANT DETAILS HEADER */
+  .participant-heading {
+    height: 82px !important;
+    min-height: 82px !important;
+    padding: 15px 24px !important;
+    border-radius: 16px !important;
+  }
+
+  .participant-title h2 {
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+  }
+
+  .participant-title p {
+    font-size: 13px !important;
+    margin-top: 6px !important;
+  }
+
+  .mandatory-text {
+    font-size: 11px !important;
+  }
+
+
+  /* FORM SPACING */
+  .registration-form {
+    margin-top: 22px !important;
+    column-gap: 28px !important;
+    row-gap: 18px !important;
+  }
+
+
+  /* LABELS */
+  .register-field label,
+  .address-field label,
+  .photo-field label {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    margin-bottom: 7px !important;
+  }
+
+
+  /* NORMAL INPUTS */
+  .field-box {
+    height: 55px !important;
+    min-height: 55px !important;
+    border-radius: 12px !important;
+  }
+
+  .field-box input,
+  .field-box select {
+    font-size: 14px !important;
+    padding-left: 17px !important;
+  }
+
+  .field-box input::placeholder {
+    font-size: 14px !important;
+  }
+
+  .field-box select {
+    padding-right: 42px !important;
+  }
+
+  .select-arrow {
+    font-size: 17px !important;
+    right: 15px !important;
+  }
+
+  .counter {
+    font-size: 9px !important;
+    right: 12px !important;
+    bottom: 6px !important;
+  }
+
+
+  /* ADDRESS + PHOTO */
+  .lower-form-grid {
+    gap: 28px !important;
+  }
+
+  .lower-form-grid .textarea-box {
+    height: 145px !important;
+    min-height: 145px !important;
+    border-radius: 12px !important;
+  }
+
+  .field-box textarea {
+    font-size: 14px !important;
+    padding: 16px 17px !important;
+  }
+
+  .field-box textarea::placeholder {
+    font-size: 14px !important;
+  }
+
+  .address-counter {
+    font-size: 9px !important;
+    right: 12px !important;
+    bottom: 8px !important;
+  }
+
+
+  /* PHOTO UPLOAD */
+  .lower-form-grid .photo-upload-box {
+    height: 145px !important;
+    min-height: 145px !important;
+    border-radius: 13px !important;
+  }
+
+  .photo-upload-content {
+    padding: 15px !important;
+  }
+
+  .photo-upload-icon {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 22px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .photo-upload-content h4 {
+    font-size: 15px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .photo-upload-content p {
+    font-size: 13px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .photo-upload-content small {
+    font-size: 11px !important;
+  }
+
+  .photo-required-note {
+    font-size: 10px !important;
+    margin-top: 5px !important;
+  }
+
+
+  /* BEFORE YOU CONTINUE */
+  .before-continue {
+    padding: 15px 18px !important;
+    border-radius: 13px !important;
+  }
+
+  .before-continue h3 {
+    font-size: 18px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .before-continue p {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+  }
+
+
+  /* BUTTONS */
+  .register-actions {
+    margin-top: 2px !important;
+  }
+
+  .back-button {
+    height: 54px !important;
+    min-width: 220px !important;
+    padding: 0 30px !important;
+    border-radius: 28px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+  }
+
+  .continue-button {
+    height: 56px !important;
+    min-width: 340px !important;
+    padding: 0 35px !important;
+    border-radius: 29px !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+  }
+}
+
+
+/* =========================================================
+   SHORT LAPTOP
+   ========================================================= */
+
+@media (min-width: 701px) and (max-height: 800px) {
+
+  .register-card {
+    padding: 22px 32px 24px !important;
+  }
+
+  .participant-heading {
+    height: 72px !important;
+    min-height: 72px !important;
+  }
+
+  .participant-title h2 {
+    font-size: 30px !important;
+  }
+
+  .registration-form {
+    margin-top: 17px !important;
+    row-gap: 13px !important;
+  }
+
+  .field-box {
+    height: 50px !important;
+    min-height: 50px !important;
+  }
+
+  .lower-form-grid .textarea-box,
+  .lower-form-grid .photo-upload-box {
+    height: 120px !important;
+    min-height: 120px !important;
+  }
+
+  .before-continue {
+    padding: 11px 16px !important;
+  }
+
+  .back-button {
+    height: 48px !important;
+  }
+
+  .continue-button {
+    height: 50px !important;
+  }
+}
+
+/* =========================================================
+   RANGAVALLIKA — AUTHORITATIVE FINAL ADDRESS + PHOTO LAYOUT
+   IMPORTANT: This block is intentionally LAST so all older
+   duplicate/short-laptop rules are overridden.
+   ========================================================= */
+
+@media screen and (min-width: 701px) {
+
+  .registration-form {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    column-gap: 28px !important;
+    row-gap: 18px !important;
+    align-items: start !important;
+  }
+
+  .lower-form-grid {
+    grid-column: 1 / -1 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) !important;
+    gap: 28px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    align-items: start !important;
+  }
+
+  .lower-form-grid .address-field {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  .lower-form-grid .photo-field {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  .lower-form-grid .textarea-box {
+    width: 100% !important;
+    height: 160px !important;
+    min-height: 160px !important;
+    max-height: 160px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-radius: 13px !important;
+  }
+
+  .lower-form-grid .textarea-box textarea {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    max-height: 100% !important;
+    box-sizing: border-box !important;
+    resize: none !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    padding: 15px 17px 30px !important;
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  .lower-form-grid .textarea-box textarea::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .lower-form-grid .textarea-box textarea {
+    scrollbar-width: none !important;
+  }
+
+  .lower-form-grid .photo-upload-box {
+    width: 100% !important;
+    height: 160px !important;
+    min-height: 160px !important;
+    max-height: 160px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-radius: 13px !important;
+  }
+
+  .lower-form-grid .photo-upload-content {
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 14px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .lower-form-grid .photo-upload-icon {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    margin: 0 0 7px !important;
+    flex-shrink: 0 !important;
+    font-size: 22px !important;
+  }
+
+  .lower-form-grid .photo-upload-content h4 {
+    margin: 0 0 5px !important;
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+  }
+
+  .lower-form-grid .photo-upload-content p {
+    margin: 0 0 5px !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+  }
+
+  .lower-form-grid .photo-upload-content small {
+    margin: 0 !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+  }
+
+  .lower-form-grid .photo-required-note {
+    margin: 6px 0 0 !important;
+    font-size: 10px !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Selected-photo state */
+  .lower-form-grid .photo-preview-content {
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    padding: 8px 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    overflow: hidden !important;
+  }
+
+  .lower-form-grid .participant-photo-preview {
+    width: 85px !important;
+    height: 140px !important;
+    min-width: 85px !important;
+    min-height: 140px !important;
+    max-width: 85px !important;
+    max-height: 140px !important;
+    object-fit: cover !important;
+    flex: 0 0 85px !important;
+    box-sizing: border-box !important;
+  }
+
+  .lower-form-grid .photo-preview-info {
+    min-width: 0 !important;
+    max-width: calc(100% - 97px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    overflow: hidden !important;
+  }
+
+  .lower-form-grid .photo-preview-info strong {
+    display: block !important;
+    margin: 0 0 6px !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .lower-form-grid .photo-preview-info p {
+    max-width: 100% !important;
+    margin: 0 0 8px !important;
+    font-size: 11px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .lower-form-grid .change-photo-button {
+    padding: 7px 11px !important;
+    font-size: 10px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Mobile remains a clean single column. */
+@media screen and (max-width: 700px) {
+  .lower-form-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  .lower-form-grid .address-field,
+  .lower-form-grid .photo-field {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    width: 100% !important;
+  }
+
+  .lower-form-grid .textarea-box {
+    height: 150px !important;
+    min-height: 150px !important;
+    max-height: 150px !important;
+  }
+
+  .lower-form-grid .photo-upload-box {
+    height: 170px !important;
+    min-height: 170px !important;
+    max-height: 170px !important;
+  }
+}
+
+/* =========================================================
+   FINAL NON-COLLIDING LARGE BOX LAYOUT
+   ========================================================= */
+
+@media screen and (min-width: 701px) {
+  .register-page {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .registration-form {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    column-gap: 28px !important;
+    row-gap: 18px !important;
+    align-items: start !important;
+  }
+
+  .lower-form-grid {
+    grid-column: 1 / -1 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) !important;
+    column-gap: 28px !important;
+    row-gap: 0 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    align-items: start !important;
+  }
+
+  .lower-form-grid .address-field,
+  .lower-form-grid .photo-field {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    align-self: start !important;
+  }
+
+  /* LARGE ADDRESS BOX */
+  .lower-form-grid .textarea-box {
+    width: 100% !important;
+    height: 180px !important;
+    min-height: 180px !important;
+    max-height: 180px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-radius: 14px !important;
+  }
+
+  .lower-form-grid .textarea-box textarea {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    max-height: 100% !important;
+    box-sizing: border-box !important;
+    resize: none !important;
+    padding: 16px 18px 32px !important;
+    line-height: 1.5 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* LARGE PHOTO BOX */
+  .lower-form-grid .photo-upload-box {
+    width: 100% !important;
+    height: 180px !important;
+    min-height: 180px !important;
+    max-height: 180px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    border-radius: 14px !important;
+  }
+
+  .lower-form-grid .photo-upload-content {
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    padding: 14px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .lower-form-grid .photo-upload-icon {
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+    margin: 0 0 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .lower-form-grid .photo-upload-content h4 {
+    margin: 0 0 6px !important;
+    font-size: 16px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .lower-form-grid .photo-upload-content p {
+    margin: 0 0 6px !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+  }
+
+  .lower-form-grid .photo-upload-content small {
+    margin: 0 !important;
+    font-size: 11px !important;
+  }
+
+  .lower-form-grid .photo-required-note {
+    margin: 7px 2px 0 !important;
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* SELECTED PHOTO — stays completely inside the box */
+  .lower-form-grid .photo-preview-content {
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    padding: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    overflow: hidden !important;
+  }
+
+  .lower-form-grid .participant-photo-preview {
+    width: 100px !important;
+    height: 158px !important;
+    min-width: 100px !important;
+    max-width: 100px !important;
+    min-height: 158px !important;
+    max-height: 158px !important;
+    object-fit: cover !important;
+    flex: 0 0 100px !important;
+    box-sizing: border-box !important;
+  }
+
+  .lower-form-grid .photo-preview-info {
+    min-width: 0 !important;
+    max-width: calc(100% - 114px) !important;
+    overflow: hidden !important;
+  }
+
+  .lower-form-grid .photo-preview-info strong {
+    font-size: 13px !important;
+    white-space: nowrap !important;
+  }
+
+  .lower-form-grid .photo-preview-info p {
+    max-width: 100% !important;
+    font-size: 11px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .lower-form-grid .change-photo-button {
+    padding: 7px 12px !important;
+    font-size: 10px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Keep the next section separated from the larger boxes. */
+  .before-continue {
+    margin-top: 18px !important;
+  }
+
+  .register-actions {
+    margin-top: 16px !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .register-page {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .lower-form-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .lower-form-grid .textarea-box {
+    height: 160px !important;
+    min-height: 160px !important;
+    max-height: 160px !important;
+  }
+
+  .lower-form-grid .photo-upload-box {
+    height: 180px !important;
+    min-height: 180px !important;
+    max-height: 180px !important;
+  }
+}

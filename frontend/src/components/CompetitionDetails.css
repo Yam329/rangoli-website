@@ -1,0 +1,1987 @@
+/* =========================================================
+   RANGAVALLIKA - COMPETITION DETAILS / REGISTRATION FEE
+   LARGE LUXURY SECOND PAGE
+========================================================= */
+
+@import url(
+  'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap'
+);
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.competition-page-new {
+
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  padding:
+    28px
+    28px
+    45px;
+
+  overflow: hidden;
+
+  font-family:
+    'Poppins',
+    sans-serif;
+
+  background-color:
+    #fffaf3;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 250, 242, 0.18),
+      rgba(255, 250, 242, 0.18)
+    ),
+    url('/hero-banner-bg.jpg');
+
+  background-position:
+    center center;
+
+  background-size:
+    cover;
+
+  background-repeat:
+    no-repeat;
+}
+
+
+/* =========================================================
+   SOFT COLOR OVERLAYS
+========================================================= */
+
+.competition-page-new::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+
+    radial-gradient(
+      circle at 5% 45%,
+      rgba(121, 224, 218, 0.18),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 94% 42%,
+      rgba(244, 151, 190, 0.17),
+      transparent 30%
+    );
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   DECORATIVE STARS
+========================================================= */
+
+.competition-decoration {
+
+  position: absolute;
+
+  z-index: 1;
+
+  color:
+    rgba(212, 175, 55, 0.30);
+
+  font-size:
+    65px;
+
+  pointer-events:
+    none;
+}
+
+.competition-decoration-left {
+
+  left:
+    -20px;
+
+  top:
+    35%;
+}
+
+.competition-decoration-right {
+
+  right:
+    -15px;
+
+  top:
+    62%;
+
+  font-size:
+    55px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.competition-new-heading,
+.registration-payment-layout,
+.competition-bottom-actions {
+
+  position: relative;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.competition-new-heading {
+
+  width:
+    100%;
+
+  max-width:
+    900px;
+
+  margin:
+    0 auto 28px;
+
+  text-align:
+    center;
+}
+
+
+/* =========================================================
+   REGISTRATION LABEL
+========================================================= */
+
+.competition-new-label {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    15px;
+
+  margin-bottom:
+    5px;
+
+  color:
+    #087e91;
+
+  font-size:
+    12px;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    6px;
+}
+
+.competition-new-label span {
+
+  width:
+    58px;
+
+  height:
+    1.5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #d4af37
+    );
+}
+
+.competition-new-label span:last-child {
+
+  background:
+    linear-gradient(
+      90deg,
+      #d4af37,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.competition-new-heading h1 {
+
+  margin:
+    0;
+
+  font-family:
+    'Playfair Display',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      48px,
+      6vw,
+      72px
+    );
+
+  line-height:
+    1.05;
+
+  font-weight:
+    700;
+
+  color:
+    #087f91;
+
+  letter-spacing:
+    -1px;
+}
+
+.competition-new-heading h1 em {
+
+  font-style:
+    normal;
+
+  color:
+    #e30068;
+}
+
+
+/* =========================================================
+   SUB HEADING
+========================================================= */
+
+.competition-new-heading h2 {
+
+  margin:
+    9px 0 3px;
+
+  font-family:
+    'Playfair Display',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      20px,
+      2.3vw,
+      28px
+    );
+
+  font-style:
+    italic;
+
+  font-weight:
+    600;
+
+  color:
+    #426b78;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.competition-new-heading p {
+
+  margin:
+    5px 0 0;
+
+  color:
+    #70848c;
+
+  font-size:
+    13px;
+
+  font-weight:
+    500;
+}
+
+
+/* =========================================================
+   PAYMENT LAYOUT
+========================================================= */
+
+.registration-payment-layout {
+
+  width:
+    100%;
+
+  max-width:
+    1100px;
+
+  margin:
+    0 auto;
+
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  align-items:
+    stretch;
+}
+
+
+/* =========================================================
+   LARGE MAIN FEE CARD
+========================================================= */
+
+.registration-fee-main-card {
+
+  position:
+    relative;
+
+  width:
+    100%;
+
+  max-width:
+    980px;
+
+  min-height:
+    575px;
+
+  box-sizing:
+    border-box;
+
+  padding:
+    45px
+    65px
+    35px;
+
+  border-radius:
+    32px;
+
+  border:
+    2px solid
+    rgba(
+      235,
+      81,
+      145,
+      0.25
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.94
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+  box-shadow:
+
+    0 30px 85px
+    rgba(
+      76,
+      45,
+      56,
+      0.15
+    ),
+
+    0 8px 25px
+    rgba(
+      223,
+      11,
+      104,
+      0.06
+    );
+
+  overflow:
+    hidden;
+
+  text-align:
+    center;
+}
+
+
+/* =========================================================
+   TOP RIGHT DECORATIVE CIRCLE
+========================================================= */
+
+.registration-fee-main-card::before {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    260px;
+
+  height:
+    260px;
+
+  right:
+    -145px;
+
+  top:
+    -145px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      241,
+      166,
+      200,
+      0.18
+    );
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================================
+   BOTTOM LEFT DECORATIVE CIRCLE
+========================================================= */
+
+.registration-fee-main-card::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  width:
+    240px;
+
+  height:
+    240px;
+
+  left:
+    -135px;
+
+  bottom:
+    -135px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      137,
+      222,
+      218,
+      0.17
+    );
+
+  pointer-events:
+    none;
+}
+
+
+/* =========================================================
+   FLORAL CARD EMBLEM
+========================================================= */
+
+.fee-card-floral {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  width:
+    68px;
+
+  height:
+    68px;
+
+  margin:
+    0 auto 17px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    50%;
+
+  border:
+    6px solid
+    #f3e5b7;
+
+  background:
+    #fff9e8;
+
+  color:
+    #d4af37;
+
+  font-size:
+    29px;
+
+  box-shadow:
+    0 6px 18px
+    rgba(
+      212,
+      175,
+      55,
+      0.18
+    );
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.fee-card-label {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  margin-bottom:
+    18px;
+
+  color:
+    #15586d;
+
+  font-size:
+    16px;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    5px;
+}
+
+
+/* =========================================================
+   PRICE BOX
+========================================================= */
+
+.fee-price-box {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  width:
+    100%;
+
+  min-height:
+    145px;
+
+  padding:
+    20px;
+
+  box-sizing:
+    border-box;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff0f7,
+      #fff8fb
+    );
+
+  border:
+    1px solid
+    rgba(
+      223,
+      11,
+      104,
+      0.04
+    );
+}
+
+
+/* =========================================================
+   ORIGINAL PRICE
+========================================================= */
+
+.fee-original-price {
+
+  display:
+    block;
+
+  margin-bottom:
+    3px;
+
+  color:
+    #9aa6ab;
+
+  font-size:
+    18px;
+
+  font-weight:
+    600;
+
+  text-decoration:
+    line-through;
+}
+
+
+/* =========================================================
+   CURRENT PRICE
+========================================================= */
+
+.fee-price-box strong {
+
+  display:
+    block;
+
+  color:
+    #df0b68;
+
+  font-family:
+    'Playfair Display',
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      70px,
+      8vw,
+      96px
+    );
+
+  font-weight:
+    800;
+
+  line-height:
+    0.95;
+}
+
+
+/* =========================================================
+   DEFAULT TEXT
+========================================================= */
+
+.fee-default-text {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  margin:
+    11px 0 20px;
+
+  color:
+    #74858d;
+
+  font-size:
+    14px;
+}
+
+
+/* =========================================================
+   COUPON SECTION
+========================================================= */
+
+.coupon-section {
+
+  position:
+    relative;
+
+  z-index:
+    5;
+
+  margin-top:
+    20px;
+
+  text-align:
+    left;
+}
+
+
+.coupon-section label {
+
+  display:
+    block;
+
+  margin-bottom:
+    9px;
+
+  color:
+    #164f63;
+
+  font-size:
+    16px;
+
+  font-weight:
+    800;
+}
+
+
+/* =========================================================
+   COUPON ROW
+========================================================= */
+
+.coupon-input-row {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    155px;
+
+  gap:
+    13px;
+}
+
+
+/* =========================================================
+   COUPON INPUT WRAPPER
+========================================================= */
+
+.coupon-input-wrapper {
+
+  position:
+    relative;
+
+  height:
+    58px;
+}
+
+
+.coupon-input-wrapper input {
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  box-sizing:
+    border-box;
+
+  padding:
+    0
+    20px
+    0
+    55px;
+
+  border:
+    1px solid
+    #d5e1e5;
+
+  border-radius:
+    17px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.98
+    );
+
+  outline:
+    none;
+
+  color:
+    #315e6c;
+
+  font-family:
+    'Poppins',
+    sans-serif;
+
+  font-size:
+    15px;
+
+  transition:
+    0.2s ease;
+}
+
+
+.coupon-input-wrapper input:focus {
+
+  border-color:
+    #df0b68;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(
+      223,
+      11,
+      104,
+      0.07
+    );
+}
+
+
+.coupon-input-wrapper input::placeholder {
+
+  color:
+    #91a4ac;
+}
+
+
+/* =========================================================
+   COUPON % ICON
+========================================================= */
+
+.coupon-tag-icon {
+
+  position:
+    absolute;
+
+  left:
+    19px;
+
+  top:
+    50%;
+
+  transform:
+    translateY(-50%);
+
+  color:
+    #728c95;
+
+  font-size:
+    22px;
+
+  font-weight:
+    600;
+
+  z-index:
+    2;
+}
+
+
+/* =========================================================
+   APPLY BUTTON
+========================================================= */
+
+.coupon-apply-button,
+.coupon-remove-button {
+
+  height:
+    58px;
+
+  border:
+    none;
+
+  border-radius:
+    32px;
+
+  color:
+    #ffffff;
+
+  font-family:
+    'Poppins',
+    sans-serif;
+
+  font-size:
+    16px;
+
+  font-weight:
+    900;
+
+  cursor:
+    pointer;
+
+  transition:
+    all
+    0.22s
+    ease;
+}
+
+
+.coupon-apply-button {
+
+  background:
+    linear-gradient(
+      90deg,
+      #ec006b,
+      #df0b68
+    );
+
+  box-shadow:
+    0 12px 27px
+    rgba(
+      223,
+      11,
+      104,
+      0.22
+    );
+}
+
+
+.coupon-remove-button {
+
+  background:
+    linear-gradient(
+      90deg,
+      #71838a,
+      #52666d
+    );
+}
+
+
+.coupon-apply-button:hover,
+.coupon-remove-button:hover {
+
+  transform:
+    translateY(-2px);
+}
+
+
+.coupon-apply-button:hover {
+
+  box-shadow:
+    0 16px 32px
+    rgba(
+      223,
+      11,
+      104,
+      0.30
+    );
+}
+
+
+/* =========================================================
+   COUPON INFO
+========================================================= */
+
+.coupon-info {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+
+  margin-top:
+    8px;
+
+  color:
+    #738891;
+
+  font-size:
+    12px;
+}
+
+
+.coupon-info span {
+
+  width:
+    17px;
+
+  height:
+    17px;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    50%;
+
+  background:
+    #dff5f5;
+
+  color:
+    #0b8c9c;
+
+  font-weight:
+    900;
+}
+
+
+/* =========================================================
+   COUPON ERROR
+========================================================= */
+
+.coupon-error {
+
+  margin-top:
+    8px;
+
+  color:
+    #c62828;
+
+  font-size:
+    12px;
+
+  font-weight:
+    600;
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.coupon-success {
+
+  position:
+    relative;
+
+  z-index:
+    4;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    10px;
+
+  margin:
+    12px auto 0;
+
+  padding:
+    9px
+    16px;
+
+  width:
+    fit-content;
+
+  border-radius:
+    15px;
+
+  background:
+    #eefaf5;
+
+  border:
+    1px solid
+    #b9e6d0;
+
+  color:
+    #267557;
+}
+
+
+.coupon-success-icon {
+
+  width:
+    27px;
+
+  height:
+    27px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    50%;
+
+  background:
+    #35a878;
+
+  color:
+    white;
+
+  font-weight:
+    900;
+}
+
+
+.coupon-success strong {
+
+  display:
+    block;
+
+  font-size:
+    13px;
+}
+
+
+.coupon-success small {
+
+  display:
+    block;
+
+  margin-top:
+    2px;
+
+  color:
+    #648276;
+
+  font-size:
+    11px;
+}
+
+
+/* =========================================================
+   APPLIED OFFER
+========================================================= */
+
+.applied-offer {
+
+  position:
+    relative;
+
+  z-index:
+    4;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    48px
+    1fr
+    auto;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+  margin-top:
+    16px;
+
+  padding:
+    15px
+    18px;
+
+  border-radius:
+    18px;
+
+  text-align:
+    left;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff8df,
+      #fffdf5
+    );
+
+  border:
+    1px solid
+    #f0d68c;
+
+  box-shadow:
+    0 7px 18px
+    rgba(
+      180,
+      130,
+      30,
+      0.07
+    );
+}
+
+
+.applied-offer.gtst-offer {
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef7ff,
+      #f7fbff
+    );
+
+  border-color:
+    #b8d9f1;
+}
+
+
+.offer-icon {
+
+  width:
+    45px;
+
+  height:
+    45px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    50%;
+
+  background:
+    #fff0b6;
+
+  font-size:
+    20px;
+}
+
+
+.gtst-offer .offer-icon {
+
+  background:
+    #dceeff;
+}
+
+
+.offer-content strong {
+
+  display:
+    block;
+
+  color:
+    #8a6200;
+
+  font-size:
+    14px;
+}
+
+
+.gtst-offer .offer-content strong {
+
+  color:
+    #17618b;
+}
+
+
+.offer-content span {
+
+  display:
+    block;
+
+  margin-top:
+    2px;
+
+  color:
+    #718096;
+
+  font-size:
+    11px;
+}
+
+
+.offer-code {
+
+  margin-top:
+    5px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+}
+
+
+.offer-code small {
+
+  color:
+    #89949b;
+
+  font-size:
+    10px;
+}
+
+
+.offer-code b {
+
+  padding:
+    3px
+    7px;
+
+  border-radius:
+    6px;
+
+  background:
+    rgba(
+      212,
+      175,
+      55,
+      0.13
+    );
+
+  color:
+    #956900;
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    1px;
+}
+
+
+.offer-saving {
+
+  text-align:
+    right;
+}
+
+
+.offer-saving small {
+
+  display:
+    block;
+
+  color:
+    #829097;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1px;
+}
+
+
+.offer-saving strong {
+
+  display:
+    block;
+
+  color:
+    #d81b60;
+
+  font-family:
+    'Playfair Display',
+    Georgia,
+    serif;
+
+  font-size:
+    24px;
+}
+
+
+/* =========================================================
+   PROCEED TO PAYMENT
+========================================================= */
+
+.proceed-payment-button {
+
+  position:
+    relative;
+
+  z-index:
+    5;
+
+  width:
+    min(
+      700px,
+      100%
+    );
+
+  height:
+    68px;
+
+  margin:
+    24px auto 0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    28px;
+
+  border:
+    none;
+
+  border-radius:
+    38px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ec006b,
+      #df0b68
+    );
+
+  color:
+    #ffffff;
+
+  font-family:
+    'Poppins',
+    sans-serif;
+
+  font-size:
+    18px;
+
+  font-weight:
+    900;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 17px 38px
+    rgba(
+      223,
+      11,
+      104,
+      0.25
+    );
+
+  transition:
+    all
+    0.25s
+    ease;
+}
+
+
+.proceed-payment-button:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 22px 45px
+    rgba(
+      223,
+      11,
+      104,
+      0.32
+    );
+}
+
+
+.proceed-payment-button b {
+
+  font-size:
+    27px;
+
+  font-weight:
+    400;
+}
+
+
+/* =========================================================
+   SECURE PAYMENT
+========================================================= */
+
+.secure-payment-note {
+
+  position:
+    relative;
+
+  z-index:
+    4;
+
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+
+  margin-top:
+    9px;
+
+  color:
+    #74858d;
+
+  font-size:
+    12px;
+}
+
+
+/* =========================================================
+   BOTTOM ACTIONS
+========================================================= */
+
+.competition-bottom-actions {
+
+  width:
+    100%;
+
+  max-width:
+    980px;
+
+  margin:
+    20px auto 0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+}
+
+
+/* =========================================================
+   PREVIOUS STEP
+========================================================= */
+
+.competition-back-button {
+
+  width:
+    225px;
+
+  height:
+    54px;
+
+  border:
+    1.5px solid
+    #149bb0;
+
+  border-radius:
+    30px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.88
+    );
+
+  color:
+    #11879b;
+
+  font-family:
+    'Poppins',
+    sans-serif;
+
+  font-size:
+    14px;
+
+  font-weight:
+    800;
+
+  cursor:
+    pointer;
+
+  transition:
+    all
+    0.2s
+    ease;
+}
+
+
+.competition-back-button:hover {
+
+  background:
+    #f0fbfb;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   AMOUNT TO PAY
+========================================================= */
+
+.current-fee-display {
+
+  display:
+    flex;
+
+  align-items:
+    baseline;
+
+  gap:
+    9px;
+
+  padding:
+    7px
+    15px;
+
+  border-radius:
+    20px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.55
+    );
+
+  backdrop-filter:
+    blur(5px);
+
+  color:
+    #75858d;
+
+  font-size:
+    14px;
+}
+
+
+.current-fee-display strong {
+
+  color:
+    #df0b68;
+
+  font-family:
+    'Playfair Display',
+    Georgia,
+    serif;
+
+  font-size:
+    30px;
+
+  font-weight:
+    800;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .competition-page-new {
+
+    padding:
+      25px
+      18px
+      35px;
+  }
+
+
+  .registration-fee-main-card {
+
+    padding:
+      38px
+      35px
+      30px;
+
+    min-height:
+      auto;
+  }
+
+
+  .coupon-input-row {
+
+    grid-template-columns:
+      1fr
+      140px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .competition-page-new {
+
+    min-height:
+      100vh;
+
+    padding:
+      17px
+      12px
+      30px;
+
+    background-position:
+      center center;
+
+    background-attachment:
+      scroll;
+  }
+
+
+  .competition-new-heading {
+
+    margin-bottom:
+      18px;
+  }
+
+
+  .competition-new-label {
+
+    font-size:
+      9px;
+
+    letter-spacing:
+      4px;
+
+    gap:
+      8px;
+  }
+
+
+  .competition-new-label span {
+
+    width:
+      32px;
+  }
+
+
+  .competition-new-heading h1 {
+
+    font-size:
+      41px;
+  }
+
+
+  .competition-new-heading h2 {
+
+    font-size:
+      19px;
+  }
+
+
+  .competition-new-heading p {
+
+    font-size:
+      11px;
+
+    max-width:
+      310px;
+
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+  }
+
+
+  .registration-fee-main-card {
+
+    padding:
+      28px
+      17px
+      26px;
+
+    border-radius:
+      25px;
+  }
+
+
+  .fee-card-floral {
+
+    width:
+      56px;
+
+    height:
+      56px;
+
+    font-size:
+      24px;
+  }
+
+
+  .fee-card-label {
+
+    font-size:
+      12px;
+
+    letter-spacing:
+      3px;
+  }
+
+
+  .fee-price-box {
+
+    min-height:
+      105px;
+  }
+
+
+  .fee-price-box strong {
+
+    font-size:
+      60px;
+  }
+
+
+  .coupon-input-row {
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .coupon-apply-button,
+  .coupon-remove-button {
+
+    width:
+      100%;
+  }
+
+
+  .applied-offer {
+
+    grid-template-columns:
+      40px
+      1fr;
+
+    padding:
+      12px;
+  }
+
+
+  .offer-saving {
+
+    grid-column:
+      2;
+
+    text-align:
+      left;
+
+    margin-top:
+      -5px;
+  }
+
+
+  .proceed-payment-button {
+
+    height:
+      60px;
+
+    font-size:
+      15px;
+
+    gap:
+      17px;
+  }
+
+
+  .competition-bottom-actions {
+
+    flex-direction:
+      column;
+
+    gap:
+      15px;
+  }
+
+
+  .competition-back-button {
+
+    width:
+      100%;
+  }
+
+
+  .current-fee-display {
+
+    justify-content:
+      center;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .competition-new-heading h1 {
+
+    font-size:
+      35px;
+  }
+
+
+  .competition-new-heading h2 {
+
+    font-size:
+      17px;
+  }
+
+
+  .registration-fee-main-card {
+
+    padding:
+      24px
+      14px;
+  }
+
+
+  .fee-price-box strong {
+
+    font-size:
+      53px;
+  }
+
+}

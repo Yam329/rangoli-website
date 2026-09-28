@@ -1,0 +1,461 @@
+/* =====================================================
+   HEADER
+===================================================== */
+
+.home-header {
+  width: 100%;
+  height: 92px;
+  padding: 14px 0;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  background: transparent;
+}
+
+
+/* =====================================================
+   SINGLE WHITE HEADER BOX
+===================================================== */
+
+.header-box {
+  width: min(1180px, calc(100% - 70px));
+  height: 78px;
+
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 22px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =====================================================
+   GIVE LAURELS LOGO
+===================================================== */
+
+.give-laurels-brand {
+  width: auto;
+  min-width: 0;
+  height: 100%;
+  max-height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 0;
+  margin: 0;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  text-decoration: none;
+
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.give-laurels-brand img {
+  max-height: 64px;
+  width: auto;
+  max-width: 320px;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* =====================================================
+   DESKTOP NAVIGATION
+===================================================== */
+
+.desktop-nav {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 34px;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =====================================================
+   NAV BUTTONS
+===================================================== */
+
+.desktop-nav button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 64px;
+
+  padding: 0;
+
+  margin: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #263d50;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  box-shadow: none;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Hover */
+
+.desktop-nav button:hover {
+  color: #d21c70;
+
+  transform: translateY(-1px);
+}
+
+
+/* Active Home */
+
+.desktop-nav button.active {
+  color: #d21c70;
+}
+
+
+/* Active underline */
+
+.desktop-nav button.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 12px;
+
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: #d21c70;
+}
+
+
+/* Remove browser focus box */
+
+.desktop-nav button:focus,
+.desktop-nav button:focus-visible,
+.desktop-nav button:active {
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  box-shadow: none;
+}
+
+
+/* =====================================================
+   REGISTER BUTTON
+===================================================== */
+
+.header-register {
+  width: 155px;
+  min-width: 155px;
+  height: 43px;
+
+  margin-left: 20px;
+
+  flex-shrink: 0;
+
+  border: none;
+  outline: none;
+
+  border-radius: 25px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      100deg,
+      #d91c78,
+      #c5228e
+    );
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(210, 28, 112, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.header-register:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 11px 25px rgba(210, 28, 112, 0.28);
+}
+
+.header-register span {
+  margin-left: 7px;
+}
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.mobile-menu {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #087b8b;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  .header-box {
+    width: calc(100% - 35px);
+    height: 72px;
+
+    padding: 0 18px;
+  }
+
+  .give-laurels-brand {
+    width: auto;
+    min-width: 0;
+  }
+
+  .give-laurels-brand img {
+    max-height: 56px;
+    max-width: 260px;
+    width: auto;
+  }
+
+  .desktop-nav {
+    gap: 18px;
+  }
+
+  .desktop-nav button {
+    font-size: 10px;
+  }
+
+  .header-register {
+    width: 125px;
+    min-width: 125px;
+
+    margin-left: 12px;
+
+    font-size: 10px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .home-header {
+    height: 76px;
+
+    padding: 9px 0;
+  }
+
+  .header-box {
+    width: calc(100% - 20px);
+
+    height: 66px;
+
+    padding: 0 14px;
+
+    border-radius: 16px;
+  }
+
+  .give-laurels-brand {
+    width: auto;
+    min-width: 0;
+
+    flex: 1;
+  }
+
+  .give-laurels-brand img {
+    max-height: 50px;
+    max-width: 230px;
+    width: auto;
+  }
+
+  .desktop-nav,
+  .header-register {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+  .header-box {
+    width: calc(100% - 12px);
+    height: 62px;
+
+    padding: 0 10px;
+  }
+
+  .give-laurels-brand img {
+    max-height: 44px;
+    max-width: 190px;
+    width: auto;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE NAVIGATION DRAWER OVERLAY
+===================================================== */
+
+.mobile-nav-overlay {
+  position: fixed;
+  top: 85px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.mobile-nav-drawer {
+  width: min(100%, 360px);
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  max-height: fit-content;
+}
+
+.mobile-nav-item {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: #fffdf8;
+  border-radius: 12px;
+  color: #1a4b58;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-item:hover, .mobile-nav-item:active {
+  background: #fdf2f7;
+  color: #d91c78;
+}
+
+.mobile-nav-register-btn {
+  width: 100%;
+  padding: 13px;
+  margin-top: 6px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(100deg, #d91c78, #c5228e);
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(217, 28, 120, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

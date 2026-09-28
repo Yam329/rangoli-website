@@ -1,0 +1,354 @@
+.terms-page {
+  min-height: 100vh;
+
+  padding: 20px 0 60px;
+
+  background:
+    radial-gradient(
+      circle at 5% 40%,
+      rgba(50, 190, 178, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 95% 40%,
+      rgba(223, 25, 116, 0.07),
+      transparent 30%
+    ),
+    #fffdf8;
+}
+
+
+/* HEADER */
+
+.terms-topbar {
+  width: min(1380px, calc(100% - 80px));
+
+  height: 78px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.terms-brand img {
+  width: 310px;
+
+  display: block;
+}
+
+
+.terms-back-home {
+  height: 46px;
+
+  padding: 0 27px;
+
+  border: 1.5px solid #078499;
+
+  border-radius: 26px;
+
+  background: white;
+
+  color: #174d65;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.terms-back-home:hover {
+  background: #078499;
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* MAIN */
+
+.terms-main {
+  width: min(1050px, calc(100% - 60px));
+
+  margin: 25px auto 0;
+}
+
+
+.terms-card {
+  padding: 42px 48px;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border: 1px solid rgba(30, 85, 100, 0.08);
+
+  box-shadow:
+    0 25px 70px rgba(30, 70, 85, 0.13);
+}
+
+
+/* TITLE */
+
+.terms-title {
+  text-align: center;
+
+  padding-bottom: 30px;
+
+  border-bottom: 1px solid #e8eef1;
+}
+
+
+.terms-title span {
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  color: #078499;
+}
+
+
+.terms-title h1 {
+  margin: 12px 0 8px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 46px;
+
+  color: #174f68;
+}
+
+
+.terms-title p {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  color: #718794;
+}
+
+
+/* CONTENT */
+
+.terms-content {
+  padding-top: 25px;
+}
+
+
+.terms-content section {
+  margin-bottom: 27px;
+}
+
+
+.terms-content section:last-child {
+  margin-bottom: 0;
+}
+
+
+.terms-content h2 {
+  margin: 0 0 10px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 22px;
+
+  color: #078499;
+}
+
+
+.terms-content ul {
+  margin: 0;
+
+  padding-left: 22px;
+}
+
+
+.terms-content li {
+  margin-bottom: 8px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color: #4f6c7a;
+}
+
+
+.terms-content li::marker {
+  color: #df1974;
+}
+
+
+.terms-content p {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+
+  color: #4f6c7a;
+}
+
+
+/* BOTTOM */
+
+.terms-bottom {
+  margin-top: 32px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #e8eef1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+.terms-bottom p {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.6;
+
+  color: #718794;
+}
+
+
+.terms-bottom button {
+  flex-shrink: 0;
+
+  height: 46px;
+
+  padding: 0 24px;
+
+  border: 1.5px solid #df1974;
+
+  border-radius: 24px;
+
+  background: white;
+
+  color: #df1974;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.terms-bottom button:hover {
+  background: #df1974;
+
+  color: white;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .terms-page {
+    padding-top: 10px;
+  }
+
+  .terms-topbar {
+    width: calc(100% - 25px);
+
+    height: 62px;
+  }
+
+  .terms-brand img {
+    width: 175px;
+  }
+
+  .terms-back-home {
+    height: 38px;
+
+    padding: 0 13px;
+
+    font-size: 9px;
+  }
+
+  .terms-main {
+    width: calc(100% - 20px);
+
+    margin-top: 15px;
+  }
+
+  .terms-card {
+    padding: 25px 18px;
+
+    border-radius: 20px;
+  }
+
+  .terms-title span {
+    font-size: 8px;
+
+    letter-spacing: 3px;
+  }
+
+  .terms-title h1 {
+    font-size: 32px;
+  }
+
+  .terms-title p {
+    font-size: 9px;
+  }
+
+  .terms-content h2 {
+    font-size: 19px;
+  }
+
+  .terms-content li,
+  .terms-content p {
+    font-size: 10px;
+  }
+
+  .terms-bottom {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .terms-bottom button {
+    width: 100%;
+  }
+}

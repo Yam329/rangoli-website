@@ -1,0 +1,956 @@
+/* =====================================================
+   ADMIN REGISTRATIONS
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.admin-dashboard {
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #f5f7fb;
+
+  color: #182746;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.admin-sidebar {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 255px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #111936 0%,
+      #17275d 100%
+    );
+
+  color: white;
+
+  display: flex;
+
+  flex-direction: column;
+
+  z-index: 100;
+}
+
+.admin-brand {
+  min-height: 105px;
+
+  padding: 24px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.admin-brand-logo {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 13px;
+
+  background: white;
+
+  color: #1749a7;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 17px;
+
+  font-weight: 900;
+}
+
+.admin-brand h2 {
+  margin: 0;
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+.admin-brand span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #aebbe2;
+
+  font-size: 11px;
+}
+
+
+/* NAV */
+
+.admin-nav {
+  padding: 20px 13px;
+}
+
+.admin-nav-item {
+  width: 100%;
+
+  min-height: 48px;
+
+  margin-bottom: 8px;
+
+  padding: 0 15px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: #c8d1e8;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  font-size: 14px;
+
+  font-weight: 650;
+
+  cursor: pointer;
+
+  text-align: left;
+}
+
+.admin-nav-item:hover {
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: white;
+}
+
+.admin-nav-item.active {
+  background:
+    linear-gradient(
+      90deg,
+      #1764df,
+      #2f75e9
+    );
+
+  color: white;
+
+  box-shadow:
+    0 8px 20px
+    rgba(23, 100, 223, 0.28);
+}
+
+.admin-nav-icon {
+  width: 22px;
+
+  text-align: center;
+
+  font-size: 17px;
+}
+
+.admin-sidebar-footer {
+  margin-top: auto;
+
+  padding: 18px 20px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  color: #d8def0;
+
+  font-size: 12px;
+}
+
+.admin-sidebar-footer small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #8290b9;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.admin-main {
+  width: calc(100% - 255px);
+
+  margin-left: 255px;
+
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.admin-header {
+  height: 76px;
+
+  background: white;
+
+  border-bottom:
+    1px solid #e7ebf3;
+
+  padding:
+    0 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+}
+
+.admin-search {
+  width: 360px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding:
+    0 13px;
+
+  border:
+    1px solid #e0e6f0;
+
+  border-radius: 10px;
+
+  background: #f8faff;
+
+  color: #7c879e;
+}
+
+.admin-search input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #182746;
+
+  font-size: 13px;
+}
+
+.admin-header-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.admin-notification {
+  width: 40px;
+  height: 40px;
+
+  border:
+    1px solid #e4e9f2;
+
+  border-radius: 10px;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+.admin-profile {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.admin-profile-avatar {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #245fd0,
+      #7347d8
+    );
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-weight: 800;
+}
+
+.admin-profile-info strong {
+  display: block;
+
+  font-size: 13px;
+}
+
+.admin-profile-info span {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 11px;
+
+  color: #8792a8;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.admin-content {
+  flex: 1;
+
+  padding:
+    32px;
+}
+
+.admin-page-heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content:
+    space-between;
+
+  margin-bottom: 24px;
+}
+
+.admin-page-heading h1 {
+  margin: 0;
+
+  color: #12265a;
+
+  font-size: 28px;
+
+  font-weight: 850;
+}
+
+.admin-page-heading p {
+  margin:
+    7px 0 0;
+
+  color: #77839b;
+
+  font-size: 13px;
+}
+
+.admin-export-btn {
+  border: none;
+
+  border-radius: 9px;
+
+  padding:
+    11px 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #116bda,
+      #2755cf
+    );
+
+  color: white;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 18px
+    rgba(32, 88, 202, 0.2);
+}
+
+
+/* =====================================================
+   SUMMARY CARDS
+===================================================== */
+
+.registration-summary-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+}
+
+.registration-summary-card {
+  min-height: 125px;
+
+  padding: 22px;
+
+  background: white;
+
+  border:
+    1px solid #e3e9f2;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 20px
+    rgba(30, 52, 90, 0.045);
+}
+
+.registration-summary-card span {
+  display: block;
+
+  color: #697791;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.registration-summary-card strong {
+  display: block;
+
+  margin-top: 15px;
+
+  color: #16366f;
+
+  font-size: 29px;
+
+  font-weight: 850;
+}
+
+.registration-summary-card.paid-card strong {
+  color: #15965a;
+}
+
+.registration-summary-card.pending-card strong {
+  color: #d28a13;
+}
+
+.registration-summary-card.failed-card strong {
+  color: #d53a3a;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.admin-error-box {
+  margin-bottom: 18px;
+
+  padding: 13px 16px;
+
+  border-radius: 10px;
+
+  background: #fff0f0;
+
+  border:
+    1px solid #ffd0d0;
+
+  color: #bc3030;
+
+  font-size: 13px;
+
+  font-weight: 650;
+}
+
+
+/* =====================================================
+   TABLE PANEL
+===================================================== */
+
+.admin-table-panel {
+  background: white;
+
+  border:
+    1px solid #e2e8f1;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 7px 25px
+    rgba(29, 49, 84, 0.05);
+
+  overflow: hidden;
+}
+
+.admin-table-header {
+  padding:
+    22px 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 20px;
+
+  border-bottom:
+    1px solid #edf0f5;
+}
+
+.admin-table-header h3 {
+  margin: 0;
+
+  color: #172c5e;
+
+  font-size: 17px;
+}
+
+.admin-table-header p {
+  margin:
+    6px 0 0;
+
+  color: #8a94a8;
+
+  font-size: 12px;
+}
+
+.registration-filters {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+}
+
+.registration-search {
+  width: 230px;
+
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding:
+    0 11px;
+
+  border:
+    1px solid #dce3ef;
+
+  border-radius: 9px;
+
+  color: #7e899d;
+
+  background: #fbfcfe;
+}
+
+.registration-search input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-size: 12px;
+}
+
+.registration-filters select {
+  height: 40px;
+
+  padding:
+    0 12px;
+
+  border:
+    1px solid #dce3ef;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #4e5d78;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.registration-table-wrapper {
+  overflow-x: auto;
+}
+
+.registration-table {
+  width: 100%;
+
+  border-collapse:
+    collapse;
+
+  min-width: 900px;
+}
+
+.registration-table th {
+  padding:
+    14px 18px;
+
+  background: #f7f9fc;
+
+  color: #64718a;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  text-align: left;
+
+  border-bottom:
+    1px solid #e7ebf2;
+}
+
+.registration-table td {
+  padding:
+    15px 18px;
+
+  color: #4e5d78;
+
+  font-size: 12px;
+
+  border-bottom:
+    1px solid #eef1f5;
+
+  vertical-align: middle;
+}
+
+.registration-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.registration-id {
+  color: #1c55bb;
+}
+
+.payment-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding:
+    6px 10px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+
+  font-weight: 850;
+}
+
+.payment-badge.success {
+  background: #def7e8;
+
+  color: #14804c;
+}
+
+.payment-badge.pending_review,
+.payment-badge.initiated {
+  background: #fff1ce;
+
+  color: #a36b0a;
+}
+
+.payment-badge.failed {
+  background: #ffe1e1;
+
+  color: #c42e2e;
+}
+
+.view-registration-btn {
+  padding:
+    8px 16px;
+
+  border:
+    1px solid #2c5ec5;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #2455b1;
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+}
+
+.view-registration-btn:hover {
+  background: #edf4ff;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.registration-empty {
+  padding:
+    65px 20px;
+
+  text-align: center;
+}
+
+.registration-empty-icon {
+  font-size: 38px;
+
+  margin-bottom: 12px;
+}
+
+.registration-empty h3 {
+  margin: 0;
+
+  color: #354462;
+
+  font-size: 15px;
+}
+
+.registration-empty p {
+  margin:
+    7px auto 0;
+
+  max-width: 380px;
+
+  color: #8a95aa;
+
+  font-size: 12px;
+}
+
+.table-loading {
+  padding: 60px !important;
+
+  text-align: center;
+
+  color: #60708d !important;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.registration-pagination {
+  min-height: 62px;
+
+  padding:
+    0 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  color: #8590a5;
+
+  font-size: 12px;
+}
+
+.refresh-registration-btn {
+  padding:
+    8px 13px;
+
+  border:
+    1px solid #d6deec;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #3d5d92;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.admin-footer {
+  padding:
+    18px 32px;
+
+  color: #8a94a8;
+
+  font-size: 11px;
+
+  border-top:
+    1px solid #e7ebf2;
+
+  background: white;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  .registration-summary-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .admin-table-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .registration-filters {
+    width: 100%;
+  }
+
+  .registration-search {
+    flex: 1;
+  }
+
+}
+
+
+@media (max-width: 800px) {
+
+  .admin-sidebar {
+    width: 75px;
+  }
+
+  .admin-brand {
+    justify-content: center;
+
+    padding: 15px;
+  }
+
+  .admin-brand > div:last-child,
+  .admin-nav-item span:last-child,
+  .admin-sidebar-footer {
+    display: none;
+  }
+
+  .admin-nav-item {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .admin-main {
+    width: calc(100% - 75px);
+
+    margin-left: 75px;
+  }
+
+  .admin-header {
+    padding:
+      0 18px;
+  }
+
+  .admin-search {
+    width: 230px;
+  }
+
+  .admin-content {
+    padding: 20px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .registration-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page-heading {
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .registration-filters {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .registration-search {
+    width: 100%;
+  }
+
+  .admin-header-right {
+    display: none;
+  }
+
+  .admin-search {
+    width: 100%;
+  }
+
+}

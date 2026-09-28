@@ -1,0 +1,1580 @@
+/* =========================================================
+   NEW REGISTRATION FEE REVIEW
+========================================================= */
+
+.selected-registration-fee {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  margin-top: 18px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff5fa,
+      #fffafd
+    );
+
+  border: 1px solid #f1d5e4;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SYMBOL
+========================================================= */
+
+.registration-review-symbol {
+  flex: 0 0 48px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fff4d7;
+
+  border: 4px solid #f7e7b8;
+
+  color: #d49a16;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.registration-review-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.registration-review-info span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #7b909b;
+
+  font-size: 10px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 500;
+}
+
+
+.registration-review-info strong {
+  display: block;
+
+  color: #174b61;
+
+  font-size: 16px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.registration-review-price {
+  text-align: right;
+}
+
+
+.registration-review-price small {
+  display: block;
+
+  margin-bottom: 1px;
+
+  color: #929da3;
+
+  font-size: 12px;
+
+  text-decoration: line-through;
+}
+
+
+.registration-review-price strong {
+  display: block;
+
+  color: #df1975;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 29px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   COUPON
+========================================================= */
+
+.review-coupon-box {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 13px;
+
+  padding: 12px 15px;
+
+  border-radius: 14px;
+
+  background: #eaf9ef;
+
+  border: 1px solid #c9ebd5;
+
+  box-sizing: border-box;
+}
+
+
+.review-coupon-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.review-coupon-icon {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #2aaa68;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 900;
+}
+
+
+.review-coupon-left span {
+  display: block;
+
+  color: #56806a;
+
+  font-size: 9px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+
+.review-coupon-left strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #176b42;
+
+  font-size: 12px;
+
+  font-family: "Poppins", sans-serif;
+
+  letter-spacing: 1px;
+}
+
+
+.review-coupon-saving {
+  text-align: right;
+}
+
+
+.review-coupon-saving small {
+  display: block;
+
+  color: #57816b;
+
+  font-size: 8px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 700;
+}
+
+
+.review-coupon-saving strong {
+  display: block;
+
+  color: #1c9857;
+
+  font-size: 18px;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.review-total-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 17px;
+
+  padding-top: 15px;
+
+  border-top: 1px dashed #d9e2e5;
+}
+
+
+.review-total-row span {
+  color: #526f7e;
+
+  font-size: 12px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 700;
+}
+
+
+.review-total-row strong {
+  color: #df1975;
+
+  font-size: 27px;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .selected-registration-fee {
+    padding: 15px;
+
+    gap: 10px;
+  }
+
+
+  .registration-review-symbol {
+    flex: 0 0 40px;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 17px;
+  }
+
+
+  .registration-review-info strong {
+    font-size: 13px;
+  }
+
+
+  .registration-review-price strong {
+    font-size: 23px;
+  }
+
+
+  .review-coupon-box {
+    padding: 11px;
+  }
+
+
+  .review-total-row strong {
+    font-size: 23px;
+  }
+
+}
+/* =========================================================
+   REVIEW PAGE
+========================================================= */
+
+.review-page {
+  min-height: 100vh !important;
+
+  background:
+    url("/hero-banner-bg2.jpg") center top / cover no-repeat !important;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.review-topbar {
+  width: 100%;
+  height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6%;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid #edf0ed;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+
+.review-brand {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+}
+
+
+.review-brand img {
+  width: 145px;
+  height: auto;
+  display: block;
+}
+
+
+.review-home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 17px;
+
+  border-radius: 999px;
+
+  background: #eef8f5;
+  border: 1px solid #d4ebe4;
+
+  color: #176078;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.review-home-button:hover {
+  background: #e2f3ee;
+  transform: translateY(-1px);
+}
+
+
+.review-home-button span {
+  font-size: 17px;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.review-intro {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding:
+    55px 28px
+    30px;
+
+  box-sizing: border-box;
+}
+
+
+.review-intro h1 {
+  margin: 0;
+
+  color: #174b61;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(42px, 5vw, 64px);
+
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+
+.review-register {
+  margin-top: 13px;
+
+  color: #df1975;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+.review-register strong {
+  color: #174b61;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.review-progress {
+  max-width: 1120px;
+
+  margin: 0 auto 38px;
+
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+
+.review-step {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  min-width: 0;
+}
+
+
+.review-circle {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f0f4f2;
+  border: 2px solid #d9e5e1;
+
+  color: #79909b;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+.review-step strong {
+  display: block;
+
+  color: #174b61;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+
+.review-step span {
+  display: block;
+
+  color: #81959d;
+
+  font-size: 9px;
+
+  margin-left: 0;
+
+  white-space: nowrap;
+}
+
+
+.review-step.completed .review-circle,
+.review-step.active .review-circle {
+  background: #df1975;
+  border-color: #df1975;
+
+  color: #ffffff;
+}
+
+
+.review-step.active strong {
+  color: #df1975;
+}
+
+
+.review-line {
+  flex: 1;
+
+  height: 2px;
+
+  margin:
+    0 18px;
+
+  background: #dfe9e5;
+
+  min-width: 35px;
+}
+
+
+.completed-line {
+  background: linear-gradient(
+    90deg,
+    #df1975,
+    #eab4ca
+  );
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.review-card {
+  width: calc(100% - 40px);
+
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 34px;
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #edf0ed;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 18px 55px rgba(39, 74, 83, 0.08),
+    0 3px 12px rgba(39, 74, 83, 0.04);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.review-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 28px;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid #edf1ef;
+}
+
+
+.review-heading h2 {
+  margin: 0;
+
+  color: #174b61;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 30px;
+
+  font-weight: 800;
+}
+
+
+.review-heading p {
+  margin: 7px 0 0;
+
+  color: #718891;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+.review-heading > span {
+  color: #8c9ba0;
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TWO COLUMNS
+========================================================= */
+
+.review-columns {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   REVIEW SECTIONS
+========================================================= */
+
+.review-section {
+  padding: 23px;
+
+  background: #fffdfb;
+
+  border: 1px solid #edf0ed;
+
+  border-radius: 22px;
+
+  box-sizing: border-box;
+}
+
+
+.participant-review {
+  background:
+    linear-gradient(
+      145deg,
+      #fffdfb,
+      #fdfaf7
+    );
+}
+
+
+.package-review {
+  background:
+    linear-gradient(
+      145deg,
+      #fffafd,
+      #fffdfb
+    );
+}
+
+
+.review-section-header {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+
+.review-section-header h3 {
+  margin: 0;
+
+  color: #174b61;
+
+  font-size: 16px;
+
+  font-weight: 800;
+}
+
+
+.review-section-header p {
+  margin: 5px 0 0;
+
+  color: #82959d;
+
+  font-size: 10px;
+}
+
+
+.review-section-header button {
+  border: 0;
+
+  padding: 7px 13px;
+
+  border-radius: 999px;
+
+  background: #eef8f5;
+
+  color: #176078;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.review-section-header button:hover {
+  background: #dff2ec;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PARTICIPANT DATA
+========================================================= */
+
+.participant-data {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+}
+
+
+.data-row {
+  display: grid;
+
+  grid-template-columns: 125px 1fr;
+
+  gap: 15px;
+
+  padding: 11px 0;
+
+  border-bottom: 1px dashed #e5e9e7;
+}
+
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+
+.data-row span {
+  color: #8a9ca3;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+
+.data-row strong {
+  color: #294f60;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  word-break: break-word;
+}
+
+
+.address-row {
+  align-items: start;
+}
+
+
+/* =========================================================
+   NEW REGISTRATION FEE REVIEW
+========================================================= */
+
+.selected-registration-fee {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  margin-top: 18px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fff5fa,
+      #fffafd
+    );
+
+  border: 1px solid #f1d5e4;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SYMBOL
+========================================================= */
+
+.registration-review-symbol {
+  flex: 0 0 48px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fff4d7;
+
+  border: 4px solid #f7e7b8;
+
+  color: #d49a16;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   INFO
+========================================================= */
+
+.registration-review-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.registration-review-info span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #7b909b;
+
+  font-size: 10px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 500;
+}
+
+
+.registration-review-info strong {
+  display: block;
+
+  color: #174b61;
+
+  font-size: 16px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.registration-review-price {
+  text-align: right;
+}
+
+
+.registration-review-price small {
+  display: block;
+
+  margin-bottom: 1px;
+
+  color: #929da3;
+
+  font-size: 12px;
+
+  text-decoration: line-through;
+}
+
+
+.registration-review-price strong {
+  display: block;
+
+  color: #df1975;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 29px;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   COUPON
+========================================================= */
+
+.review-coupon-box {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 13px;
+
+  padding: 12px 15px;
+
+  border-radius: 14px;
+
+  background: #eaf9ef;
+
+  border: 1px solid #c9ebd5;
+
+  box-sizing: border-box;
+}
+
+
+.review-coupon-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.review-coupon-icon {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #2aaa68;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 900;
+}
+
+
+.review-coupon-left span {
+  display: block;
+
+  color: #56806a;
+
+  font-size: 9px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+
+.review-coupon-left strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #176b42;
+
+  font-size: 12px;
+
+  font-family: "Poppins", sans-serif;
+
+  letter-spacing: 1px;
+}
+
+
+.review-coupon-saving {
+  text-align: right;
+}
+
+
+.review-coupon-saving small {
+  display: block;
+
+  color: #57816b;
+
+  font-size: 8px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 700;
+}
+
+
+.review-coupon-saving strong {
+  display: block;
+
+  color: #1c9857;
+
+  font-size: 18px;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.review-total-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 17px;
+
+  padding-top: 15px;
+
+  border-top: 1px dashed #d9e2e5;
+}
+
+
+.review-total-row span {
+  color: #526f7e;
+
+  font-size: 12px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-weight: 700;
+}
+
+
+.review-total-row strong {
+  color: #df1975;
+
+  font-size: 27px;
+
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================================
+   TERMS BOX
+========================================================= */
+
+.terms-box {
+  margin-top: 24px;
+
+  padding: 20px 22px;
+
+  background: #f8fbf9;
+
+  border: 1px solid #e2ece8;
+
+  border-radius: 19px;
+
+  box-sizing: border-box;
+}
+
+
+.terms-box label {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  cursor: pointer;
+}
+
+
+.terms-box input {
+  position: absolute;
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+.custom-check {
+  width: 21px;
+  height: 21px;
+
+  flex: 0 0 21px;
+
+  margin-top: 2px;
+
+  border-radius: 6px;
+
+  background: #ffffff;
+
+  border: 1.5px solid #cbdad5;
+
+  box-sizing: border-box;
+
+  position: relative;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.terms-box input:checked + .custom-check {
+  background: #df1975;
+
+  border-color: #df1975;
+}
+
+
+.terms-box input:checked + .custom-check::after {
+  content: "✓";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -53%);
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 900;
+}
+
+
+.terms-content {
+  flex: 1;
+}
+
+
+.terms-content h3 {
+  margin: 0 0 5px;
+
+  color: #174b61;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+.terms-content p {
+  margin: 0;
+
+  color: #71868f;
+
+  font-size: 10px;
+
+  line-height: 1.65;
+}
+
+
+.terms-link {
+  margin-top: 13px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #df1975;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.terms-link:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.review-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 18px;
+
+  margin-top: 28px;
+
+  padding-top: 23px;
+
+  border-top: 1px solid #edf1ef;
+}
+
+
+.review-back,
+.payment-button {
+  min-height: 48px;
+
+  border-radius: 999px;
+
+  padding: 0 22px;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.review-back {
+  background: #ffffff;
+
+  color: #557582;
+
+  border: 1px solid #d9e6e1;
+}
+
+
+.review-back:hover {
+  background: #f5faf8;
+
+  transform: translateY(-1px);
+}
+
+
+.review-back span {
+  font-size: 16px;
+}
+
+
+.payment-button {
+  min-width: 210px;
+
+  background: #df1975;
+
+  color: #ffffff;
+
+  border: 1px solid #df1975;
+
+  box-shadow:
+    0 9px 22px rgba(223, 25, 117, 0.18);
+}
+
+
+.payment-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(223, 25, 117, 0.24);
+}
+
+
+.payment-button span {
+  font-size: 16px;
+}
+
+
+.payment-button:disabled {
+  background: #d9dfe1;
+
+  border-color: #d9dfe1;
+
+  color: #ffffff;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .review-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .review-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .review-heading > span {
+    white-space: normal;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .review-topbar {
+    height: 68px;
+
+    padding: 0 20px;
+  }
+
+  .review-brand img {
+    width: 120px;
+  }
+
+  .review-home-button {
+    padding: 8px 12px;
+
+    font-size: 10px;
+  }
+
+  .review-intro {
+    padding:
+      38px 20px
+      25px;
+  }
+
+  .review-progress {
+    padding: 0 20px;
+
+    overflow-x: auto;
+
+    align-items: flex-start;
+  }
+
+  .review-step {
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 5px;
+
+    flex: 0 0 auto;
+  }
+
+  .review-step strong,
+  .review-step span {
+    white-space: normal;
+
+    max-width: 90px;
+  }
+
+  .review-line {
+    min-width: 28px;
+
+    margin:
+      19px 8px 0;
+  }
+
+  .review-card {
+    width: calc(100% - 24px);
+
+    padding: 20px 15px;
+
+    border-radius: 22px;
+  }
+
+  .review-heading h2 {
+    font-size: 25px;
+  }
+
+  .review-section {
+    padding: 18px;
+  }
+
+  .data-row {
+    grid-template-columns: 105px 1fr;
+
+    gap: 10px;
+  }
+
+  .review-actions {
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  .review-back,
+  .payment-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .selected-registration-fee {
+    padding: 15px;
+
+    gap: 10px;
+  }
+
+
+  .registration-review-symbol {
+    flex: 0 0 40px;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 17px;
+  }
+
+
+  .registration-review-info strong {
+    font-size: 13px;
+  }
+
+
+  .registration-review-price strong {
+    font-size: 23px;
+  }
+
+
+  .review-coupon-box {
+    padding: 11px;
+  }
+
+
+  .review-total-row strong {
+    font-size: 23px;
+  }
+
+}
+
+
+@media (max-width: 430px) {
+
+  .review-home-button {
+    font-size: 0;
+  }
+
+  .review-home-button span {
+    font-size: 18px;
+  }
+
+  .review-intro h1 {
+    font-size: 40px;
+  }
+
+  .review-card {
+    width: calc(100% - 16px);
+
+    padding: 16px 12px;
+  }
+
+  .review-section {
+    padding: 15px;
+  }
+
+  .data-row {
+    grid-template-columns: 1fr;
+
+    gap: 3px;
+  }
+
+  .selected-registration-fee {
+    align-items: flex-start;
+  }
+
+  .registration-review-price strong {
+    font-size: 21px;
+  }
+
+  .review-coupon-box {
+    align-items: flex-start;
+  }
+
+}

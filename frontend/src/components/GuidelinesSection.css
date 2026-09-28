@@ -1,0 +1,456 @@
+/* =====================================================
+   LUXURY FESTIVE GUIDELINES SECTION STYLES (SCREEN-FIT)
+===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@400;500;600;700&display=swap');
+
+.guidelines-luxury-section {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  scroll-margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px 45px;
+  background-color: #fffdf9;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(244, 143, 177, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 20%, rgba(0, 172, 193, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(255, 179, 0, 0.06) 0%, transparent 50%);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Outer Container */
+.guidelines-luxury-container {
+  width: min(100%, 1020px);
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Top Decorative Garland Corners */
+.garland-corner {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.garland-left {
+  left: 0;
+}
+.garland-right {
+  right: 0;
+}
+
+/* Mandala Background Line Art */
+.mandala-bg {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+.mandala-left {
+  top: 100px;
+  left: -40px;
+}
+.mandala-right {
+  top: 140px;
+  right: -40px;
+}
+
+/* Bottom Corner Decorations */
+.bottom-rangoli-corner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.bottom-lotus-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Header Block */
+.guidelines-luxury-header {
+  text-align: center;
+  margin-bottom: 18px;
+  position: relative;
+  z-index: 6;
+}
+
+.guidelines-top-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.badge-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #a37525;
+  text-transform: uppercase;
+}
+
+.badge-line {
+  width: 32px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.guidelines-main-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(30px, 3.2vw, 42px);
+  font-weight: 700;
+  color: #165b6e;
+  margin: 2px 0;
+  line-height: 1.12;
+}
+
+.guidelines-main-title .title-highlight {
+  color: #c2185b;
+}
+
+.header-swoosh {
+  display: block;
+  margin: 2px auto 6px;
+  width: 210px;
+  height: auto;
+}
+
+.guidelines-sub-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(12px, 1.1vw, 13.5px);
+  font-weight: 400;
+  color: #5c6b73;
+  margin: 0 0 4px;
+}
+
+.guidelines-header-lotus-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.guidelines-header-lotus-bottom svg {
+  width: 18px;
+  height: 14px;
+}
+
+/* 6 Cards Grid (2 Cols x 3 Rows) */
+.guidelines-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 14px;
+  position: relative;
+  z-index: 6;
+}
+
+/* Individual Guideline Card */
+.guideline-luxury-card {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.025), 0 2px 4px rgba(0, 0, 0, 0.01);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.25s ease;
+}
+
+.guideline-luxury-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05), 0 3px 8px rgba(0, 0, 0, 0.02);
+}
+
+/* Left Badges Group (Number + Icon Circles) */
+.card-badges-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.card-number-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon-badge svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Card Content Body */
+.card-content-body {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(16px, 1.5vw, 19px);
+  font-weight: 700;
+  margin: 0 0 5px;
+  line-height: 1.15;
+}
+
+.card-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5px;
+}
+
+.card-bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(11px, 1vw, 12px);
+  line-height: 1.38;
+  color: #374151;
+}
+
+.bullet-dot {
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.bullet-text {
+  flex: 1;
+}
+
+/* Corner Watermark Leaf */
+.card-corner-leaf-svg {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 55px;
+  height: 55px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Card Color Themes */
+
+/* 01: Pink Theme (Eligibility) */
+.card-theme-pink {
+  background: linear-gradient(135deg, #fff5f8 0%, #fdeef3 100%);
+  border: 1.5px solid #f8c4d8;
+}
+.card-theme-pink .card-number-badge {
+  background: linear-gradient(135deg, #e91e63, #c2185b);
+}
+.card-theme-pink .card-icon-badge {
+  background: linear-gradient(135deg, #00838f, #006064);
+}
+.card-theme-pink .card-title {
+  color: #c2185b;
+}
+.card-theme-pink .bullet-dot {
+  background-color: #c2185b;
+}
+
+/* 02: Teal Theme (Registration) */
+.card-theme-teal {
+  background: linear-gradient(135deg, #f0fbfb 0%, #e6f7f8 100%);
+  border: 1.5px solid #b8e8eb;
+}
+.card-theme-teal .card-number-badge {
+  background: linear-gradient(135deg, #00acc1, #00838f);
+}
+.card-theme-teal .card-icon-badge {
+  background: linear-gradient(135deg, #006064, #004d40);
+}
+.card-theme-teal .card-title {
+  color: #00607a;
+}
+.card-theme-teal .bullet-dot {
+  background-color: #00acc1;
+}
+
+/* 03: Gold Theme (Rangoli Competition) */
+.card-theme-gold {
+  background: linear-gradient(135deg, #fffcf0 0%, #fff7e0 100%);
+  border: 1.5px solid #fbe7b2;
+}
+.card-theme-gold .card-number-badge {
+  background: linear-gradient(135deg, #ffb300, #fb8c00);
+}
+.card-theme-gold .card-icon-badge {
+  background: linear-gradient(135deg, #b78103, #8c6000);
+}
+.card-theme-gold .card-title {
+  color: #aa6c00;
+}
+.card-theme-gold .bullet-dot {
+  background-color: #ffb300;
+}
+
+/* 04: Green Theme (Competition Rules) */
+.card-theme-green {
+  background: linear-gradient(135deg, #f2f9f4 0%, #e8f5e9 100%);
+  border: 1.5px solid #c8e6c9;
+}
+.card-theme-green .card-number-badge {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+}
+.card-theme-green .card-icon-badge {
+  background: linear-gradient(135deg, #00695c, #004d40);
+}
+.card-theme-green .card-title {
+  color: #2e7d32;
+}
+.card-theme-green .bullet-dot {
+  background-color: #4caf50;
+}
+
+/* 05: Purple Theme (Prizes & Awards) */
+.card-theme-purple {
+  background: linear-gradient(135deg, #f8f4fc 0%, #f3e5f5 100%);
+  border: 1.5px solid #e1bee7;
+}
+.card-theme-purple .card-number-badge {
+  background: linear-gradient(135deg, #ab47bc, #7b1fa2);
+}
+.card-theme-purple .card-icon-badge {
+  background: linear-gradient(135deg, #512da8, #311b92);
+}
+.card-theme-purple .card-title {
+  color: #6a1b9a;
+}
+.card-theme-purple .bullet-dot {
+  background-color: #ab47bc;
+}
+
+/* 06: Coral/Pink Theme (Important Instructions) */
+.card-theme-coral {
+  background: linear-gradient(135deg, #fff2f4 0%, #ffe0e6 100%);
+  border: 1.5px solid #ffcdd2;
+}
+.card-theme-coral .card-number-badge {
+  background: linear-gradient(135deg, #ec407a, #d81b60);
+}
+.card-theme-coral .card-icon-badge {
+  background: linear-gradient(135deg, #c2185b, #880e4f);
+}
+.card-theme-coral .card-title {
+  color: #c2185b;
+}
+.card-theme-coral .bullet-dot {
+  background-color: #ec407a;
+}
+
+/* Footer Banner Flourish */
+.footer-flourish-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  position: relative;
+  z-index: 6;
+}
+
+.footer-flourish-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(16px, 1.5vw, 19px);
+  font-weight: 600;
+  color: #b71c1c;
+  letter-spacing: 0.5px;
+}
+
+.heart-icon {
+  color: #d81b60;
+  display: inline-block;
+  margin-left: 2px;
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .guidelines-luxury-section {
+    min-height: auto;
+    padding: 40px 16px;
+  }
+  .guidelines-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .guidelines-luxury-section {
+    min-height: auto;
+    padding: 35px 12px;
+  }
+  .guidelines-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .garland-corner svg, .mandala-bg svg {
+    transform: scale(0.55);
+  }
+  .bottom-rangoli-corner svg, .bottom-lotus-corner svg {
+    transform: scale(0.55);
+  }
+  .guideline-luxury-card {
+    padding: 12px 14px;
+  }
+  .card-badges-group {
+    gap: 5px;
+  }
+  .card-number-badge, .card-icon-badge {
+    width: 30px;
+    height: 30px;
+  }
+  .card-number-badge {
+    font-size: 11px;
+  }
+  .card-icon-badge svg {
+    width: 14px;
+    height: 14px;
+  }
+}
