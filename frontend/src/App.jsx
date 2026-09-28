@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
 import Register from "./Register";
 import Payment from "./components/Payment";
@@ -150,8 +150,10 @@ function HomePage() {
   }, []);
 
 
+  const navigate = useNavigate();
+
   const goRegister = () => {
-    window.location.href = "/register";
+    navigate("/register");
   };
 
 
@@ -263,7 +265,7 @@ function HomePage() {
                   type="button"
                   className="existing-registration-text-btn"
                   onClick={() => {
-                    window.location.href = "/register?continue=existing";
+                    navigate("/register?continue=existing");
                   }}
                 >
                   <span className="cont-top">Already registered?</span>

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const goRegister = () => {
     setMobileMenuOpen(false);
-    window.location.href = "/register";
+    navigate("/register");
   };
 
   const goToSection = (id) => {
