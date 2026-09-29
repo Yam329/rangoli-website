@@ -228,7 +228,7 @@ export default function RegistrationFeeSection({
 
             {/* Price */}
             <div className="registration-fee-price">
-              ₹999
+              ₹799
             </div>
 
             <p className="registration-fee-text">

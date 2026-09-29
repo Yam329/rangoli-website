@@ -18,6 +18,11 @@ const adminQueriesRouter = require("./routes/adminQueries");
 const adminAuthRouter = require("./routes/adminAuth");
 const adminRegistrationsRouter = require("./routes/adminRegistrations");
 const queriesRouter = require("./routes/queries");
+const {
+  createAdminRouter: createAdminCouponsRouter,
+  createPublicRouter: createPublicCouponsRouter,
+  resolveCoupon,
+} = require("./routes/coupons");
 
 const app = express();
 
@@ -78,15 +83,17 @@ const upload = multer({
    REGISTRATION AMOUNTS / COUPONS
 ========================================================= */
 
-const BASE_REGISTRATION_FEE = 999;
+const BASE_REGISTRATION_FEE = 799;
 
-const VALID_REGISTRATION_AMOUNTS = [999, 899, 799];
+// Old fee (base 999) — registrations saved before the price change
+// can still be paid at the amount they were created with.
+const LEGACY_BASE_REGISTRATION_FEE = 999;
 
-const VALID_COUPONS = {
-  
-  UDAYBHANU0246: { type: "UDAYBHANU", amount: 899 },
-  GTST0246: { type: "GTST", amount: 799 },
-};
+// Coupons live in the "coupons" table (managed in the admin dashboard).
+// Any stored registration amount between ₹1 and the legacy fee is payable.
+function isPayableAmount(amount) {
+  return Number.isInteger(amount) && amount >= 1 && amount <= LEGACY_BASE_REGISTRATION_FEE;
+}
 
 /* =========================================================
    HELPERS
@@ -106,10 +113,24 @@ function getExtension(mimetype) {
   return "jpg";
 }
 
-function couponFromAmount(amount) {
-  if (amount === 899) return { code: "UDAYBHANU0246", type: "UDAYBHANU" };
-  if (amount === 799) return { code: "GTST0246", type: "GTST" };
+// Coupon applied to a saved registration. Uses the stored coupon_code;
+// very old rows without one are matched by amount.
+function couponForRegistration(row) {
+  if (row.coupon_code) {
+    return { code: row.coupon_code, type: row.coupon_type || row.coupon_code };
+  }
+  const amount = Number(row.package_amount);
+  if (amount === 899) return { code: "UDAYBHANU0246", type: "UDAYBHANU" }; // legacy ₹999 fee
+  if (amount === 799 && Number(row.base_amount) === LEGACY_BASE_REGISTRATION_FEE) {
+    return { code: "GTST0246", type: "GTST" }; // legacy ₹999 fee
+  }
   return { code: null, type: null };
+}
+
+function baseFeeForAmount(amount) {
+  return amount > BASE_REGISTRATION_FEE
+    ? LEGACY_BASE_REGISTRATION_FEE
+    : BASE_REGISTRATION_FEE;
 }
 function getBackendBaseUrl(req) {
   if (req) {
@@ -308,7 +329,7 @@ function normalizeOcrText(text) {
    OCR — PAYMENT AMOUNT  (restored from working version)
 ========================================================= */
 
-function extractPaymentAmount(text) {
+function extractPaymentAmount(text, expectedAmount) {
   const cleanText = normalizeOcrText(text);
 
   console.log("AMOUNT OCR SEARCH TEXT:");
@@ -398,7 +419,10 @@ function extractPaymentAmount(text) {
 
   /* 4. Final fallback: known registration amounts only */
 
-  const commonAmounts = cleanText.match(/\b(999|899|799)\b/g);
+  const knownAmounts = [BASE_REGISTRATION_FEE, LEGACY_BASE_REGISTRATION_FEE, 899, expectedAmount]
+    .filter((a) => Number.isFinite(a))
+    .join("|");
+  const commonAmounts = cleanText.match(new RegExp(`\\b(${knownAmounts})\\b`, "g"));
 
   if (commonAmounts && commonAmounts.length > 0) {
     const detected = Number(commonAmounts[commonAmounts.length - 1]);
@@ -527,14 +551,14 @@ function hasPaymentInformation(text) {
    RUN OCR
 ========================================================= */
 
-async function runPaymentOcr(buffer) {
+async function runPaymentOcr(buffer, expectedAmount) {
   const result = await Tesseract.recognize(buffer, "eng");
 
   const text = normalizeOcrText(result?.data?.text || "");
 
   return {
     text,
-    amount: extractPaymentAmount(text),
+    amount: extractPaymentAmount(text, expectedAmount),
     date: extractPaymentDate(text),
   };
 }
@@ -571,8 +595,9 @@ app.post(
     try {
       const {
   full_name,
+  age,
+  guardian_name,
   mobile,
-  dob,
   address,
   district,
   state,
@@ -587,8 +612,9 @@ app.post(
 
       if (
         !full_name ||
+        !age ||
+        !guardian_name ||
         !mobile ||
-        !dob ||
         !address ||
         !district ||
         !state ||
@@ -627,12 +653,21 @@ app.post(
         });
       }
 
-      const cleanDob = String(dob).trim();
+      const cleanAge = Number(String(age).trim());
 
-      if (!cleanDob) {
+      if (!Number.isInteger(cleanAge) || cleanAge < 3 || cleanAge > 100) {
         return res.status(400).json({
           success: false,
-          message: "Date of birth is required.",
+          message: "Please enter a valid age.",
+        });
+      }
+
+      const cleanGuardianName = String(guardian_name).trim();
+
+      if (!cleanGuardianName) {
+        return res.status(400).json({
+          success: false,
+          message: "Guardian name is required.",
         });
       }
 
@@ -666,52 +701,29 @@ console.log("COUPON DEBUG:", {
         });
       }
 
-      if (!VALID_REGISTRATION_AMOUNTS.includes(packageAmount)) {
-        return res.status(400).json({
-          success: false,
-          message: "Invalid registration amount.",
-        });
-      }
+      /* COUPON VALIDATION (coupons table) */
 
-      /* COUPON VALIDATION */
+      let expectedAmount = BASE_REGISTRATION_FEE;
 
       if (couponCode) {
-        const coupon = VALID_COUPONS[couponCode];
+        const result = await resolveCoupon(supabase, couponCode, BASE_REGISTRATION_FEE);
 
-        if (!coupon) {
+        if (result.error) {
           return res.status(400).json({
             success: false,
-            message: "Invalid coupon code.",
+            message: result.error,
           });
         }
 
-        if (coupon.type !== couponType) {
-          return res.status(400).json({
-            success: false,
-            message: "Invalid coupon type.",
-          });
-        }
-
-        if (coupon.amount !== packageAmount) {
-          return res.status(400).json({
-            success: false,
-            message: "Coupon amount does not match.",
-          });
-        }
+        expectedAmount = result.amount;
       }
 
-      if (packageAmount !== BASE_REGISTRATION_FEE && !couponCode) {
+      if (packageAmount !== expectedAmount) {
         return res.status(400).json({
           success: false,
-          message:
-            "A valid coupon is required for the selected discounted amount.",
-        });
-      }
-
-      if (packageAmount === BASE_REGISTRATION_FEE && couponCode) {
-        return res.status(400).json({
-          success: false,
-          message: "Coupon amount is invalid for \u20b9999 registration.",
+          message: couponCode
+            ? "Coupon amount does not match. Please re-apply the coupon."
+            : "Invalid registration amount.",
         });
       }
 
@@ -761,7 +773,9 @@ console.log("COUPON DEBUG:", {
 
   mobile: cleanMobile,
 
-  dob: cleanDob,
+  age: cleanAge,
+
+  guardian_name: cleanGuardianName,
 
   address: String(address).trim(),
 
@@ -778,7 +792,7 @@ console.log("COUPON DEBUG:", {
   package_amount: packageAmount,
 
   // Coupon information
-  base_amount: Number(base_amount) || 999,
+  base_amount: BASE_REGISTRATION_FEE,
 
   coupon_code: coupon_code
     ? String(coupon_code).trim().toUpperCase()
@@ -916,6 +930,8 @@ app.post("/api/registration/recover", async (req, res) => {
         full_name,
         mobile,
         dob,
+        age,
+        guardian_name,
         address,
         district,
         state,
@@ -923,6 +939,9 @@ app.post("/api/registration/recover", async (req, res) => {
         participant_photo,
         package_name,
         package_amount,
+        base_amount,
+        coupon_code,
+        coupon_type,
         payment_status,
         payment_id,
         payment_screenshot,
@@ -956,7 +975,7 @@ app.post("/api/registration/recover", async (req, res) => {
     }
 
     const recoveredAmount = Number(data.package_amount);
-    const coupon = couponFromAmount(recoveredAmount);
+    const coupon = couponForRegistration(data);
 
     return res.json({
       success: true,
@@ -964,7 +983,7 @@ app.post("/api/registration/recover", async (req, res) => {
       registration: {
         ...data,
         amount: recoveredAmount,
-        base_amount: BASE_REGISTRATION_FEE,
+        base_amount: baseFeeForAmount(recoveredAmount),
         coupon_code: coupon.code,
         coupon_type: coupon.type,
       },
@@ -1131,7 +1150,7 @@ app.post(
       try {
         console.log("Starting OCR...");
 
-        ocr = await runPaymentOcr(req.file.buffer);
+        ocr = await runPaymentOcr(req.file.buffer, expectedAmount);
 
         console.log("OCR completed.");
         console.log("OCR TEXT:", ocr.text);
@@ -1327,6 +1346,8 @@ app.get("/api/registration/:registrationId/status", async (req, res) => {
         full_name,
         mobile,
         dob,
+        age,
+        guardian_name,
         address,
         district,
         state,
@@ -1334,6 +1355,9 @@ app.get("/api/registration/:registrationId/status", async (req, res) => {
         participant_photo,
         package_name,
         package_amount,
+        base_amount,
+        coupon_code,
+        coupon_type,
         payment_status,
         payment_id,
         payment_screenshot,
@@ -1366,14 +1390,14 @@ app.get("/api/registration/:registrationId/status", async (req, res) => {
     }
 
     const amount = Number(data.package_amount);
-    const coupon = couponFromAmount(amount);
+    const coupon = couponForRegistration(data);
 
     return res.json({
       success: true,
       registration: {
         ...data,
         amount,
-        base_amount: BASE_REGISTRATION_FEE,
+        base_amount: baseFeeForAmount(amount),
         coupon_code: coupon.code,
         coupon_type: coupon.type,
       },
@@ -1524,6 +1548,33 @@ app.use(
 );
 
 /* =========================================================
+   ADMIN COUPONS
+========================================================= */
+
+app.use(
+  "/api/admin/coupons",
+  (req, res, next) => {
+    req.supabase = supabase;
+    next();
+  },
+  adminAuthRouter.requireAdmin,
+  createAdminCouponsRouter({ baseFee: BASE_REGISTRATION_FEE })
+);
+
+/* =========================================================
+   PUBLIC COUPONS (validate a code)
+========================================================= */
+
+app.use(
+  "/api/coupons",
+  (req, res, next) => {
+    req.supabase = supabase;
+    next();
+  },
+  createPublicCouponsRouter({ baseFee: BASE_REGISTRATION_FEE })
+);
+
+/* =========================================================
    PUBLIC QUERIES
 ========================================================= */
 
@@ -1617,12 +1668,10 @@ app.post("/api/payment/easebuzz/initiate", async (req, res) => {
     const amount = Number(
       registration.package_amount ||
       registration.payment_amount ||
-      999
+      BASE_REGISTRATION_FEE
     );
 
-    const allowedAmounts = [999, 899, 799];
-
-    if (!allowedAmounts.includes(amount)) {
+    if (!isPayableAmount(amount)) {
       return res.status(400).json({
         success: false,
         message: "Invalid registration amount",
@@ -2115,7 +2164,7 @@ if (!process.env.VERCEL) {
     console.log("================================");
     console.log("Rangavallika Backend Running");
     console.log(`Server: http://localhost:${PORT}`);
-    console.log("Registration Fees: ₹999 / ₹899 / ₹799");
+    console.log("Registration Fees: ₹799 / ₹699 / ₹599");
     console.log("Registration IDs: GLF001, GLF002, GLF003...");
     console.log("Server-side OCR: ENABLED");
     console.log("================================");

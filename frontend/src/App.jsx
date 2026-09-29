@@ -5,6 +5,7 @@ import Register from "./Register";
 import Payment from "./components/Payment";
 import Header from "./components/Header";
 import GuidelinesSection from "./components/GuidelinesSection";
+import PrizesSection from "./components/PrizesSection";
 import ContactSection from "./components/ContactSection";
 
 import AdminLogin from "./admin/pages/AdminLogin";
@@ -12,6 +13,7 @@ import AdminDashboard from "./admin/pages/AdminDashboard";
 import AdminRegistrations from "./admin/pages/AdminRegistrations";
 import AdminPayments from "./admin/pages/AdminPayments";
 import AdminQueries from "./admin/pages/AdminQueries";
+import AdminCoupons from "./admin/pages/AdminCoupons";
 import ProtectedAdminRoute from "./admin/components/ProtectedAdminRoute";
 
 import "./App.css";
@@ -32,7 +34,19 @@ import {
   FiUser,
   FiMessageCircle,
   FiList,
+  FiGift,
+  FiAward,
+  FiFlag,
+  FiStar,
+  FiTag,
 } from "react-icons/fi";
+
+const REGISTRATION_INCLUDES = [
+  { icon: <FiGift />, title: "Welcome Kit", text: "Given to every registered participant" },
+  { icon: <FiAward />, title: "Participation Certificate", text: "Recognition for taking part" },
+  { icon: <FiFlag />, title: "District Level Entry", text: "Compete with the best in your district" },
+  { icon: <FiStar />, title: "Win up to ₹50,000", text: "₹20,000 district · ₹50,000 state level" },
+];
 
 function PaymentReturnPage() {
   const params = new URLSearchParams(window.location.search);
@@ -113,6 +127,14 @@ function App() {
     </ProtectedAdminRoute>
   }
 />
+<Route
+  path="/admin/coupons"
+  element={
+    <ProtectedAdminRoute>
+      <AdminCoupons />
+    </ProtectedAdminRoute>
+  }
+/>
 
 
     {/* Unknown URL */}
@@ -185,7 +207,7 @@ function HomePage() {
 
             <div className="hero-title-wrap">
               <h1 className="main-script-title">
-                Rangavalika <span className="title-flower-emoji">🌸</span>
+                Rangavallika <span className="title-flower-emoji">🌸</span>
               </h1>
               <h2 className="main-serif-subtitle">RANGOLI FEST</h2>
             </div>
@@ -365,7 +387,7 @@ function HomePage() {
             </div>
 
             <h2 className="about-heading">
-              About <span className="about-title-script">Rangavalika <span className="title-flower-emoji">🌸</span></span>
+              About <span className="about-title-script">Rangavallika <span className="title-flower-emoji">🌸</span></span>
             </h2>
 
             <h3 className="about-subheading">
@@ -521,6 +543,13 @@ function HomePage() {
 
 
       {/* =================================================
+          AWARDS & PRIZES
+      ================================================= */}
+
+      <PrizesSection />
+
+
+      {/* =================================================
           REGISTRATION FEE
       ================================================= */}
 {/* =================================================
@@ -588,7 +617,7 @@ function HomePage() {
 
       {/* Price */}
       <div className="registration-fee-price">
-        ₹999
+        ₹799
       </div>
 
 
@@ -603,6 +632,37 @@ function HomePage() {
 
       <p className="registration-fee-text">
         Standard registration fee
+      </p>
+
+
+      {/* What's included */}
+      <div className="registration-fee-includes">
+
+        <div className="registration-fee-includes-title">
+          What&apos;s Included
+        </div>
+
+        <ul>
+          {REGISTRATION_INCLUDES.map((item) => (
+            <li key={item.title}>
+              <span className="registration-fee-include-icon">
+                {item.icon}
+              </span>
+              <span>
+                <strong>{item.title}</strong>
+                <small>{item.text}</small>
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      </div>
+
+
+      {/* Coupon note */}
+      <p className="registration-fee-coupon">
+        <FiTag />
+        Have a coupon? Apply it during registration.
       </p>
 
 

@@ -489,6 +489,45 @@ const AdminDashboard = () => {
         </button>
 
         {/* =================================================
+            COUPONS
+        ================================================= */}
+
+        <button
+          onClick={() =>
+            navigate(
+              "/admin/coupons"
+            )
+          }
+          style={{
+            border: "none",
+            width: "100%",
+            padding:
+              "15px 17px",
+            borderRadius: "14px",
+            background:
+              "transparent",
+            color: "#ffffff",
+            display: "flex",
+            alignItems: "center",
+            gap: "15px",
+            fontSize: "16px",
+            cursor: "pointer",
+            textAlign: "left",
+            marginTop: "8px",
+          }}
+        >
+          <span
+            style={{
+              fontSize: "20px",
+            }}
+          >
+            %
+          </span>
+
+          Coupons
+        </button>
+
+        {/* =================================================
             SIDEBAR BOTTOM
         ================================================= */}
 

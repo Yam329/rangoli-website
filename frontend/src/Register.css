@@ -2856,3 +2856,27 @@ html, body {
     max-height: 180px !important;
   }
 }
+
+
+/* =========================================================
+   PARTICIPANT FORM ORDER (desktop, 3 columns)
+   Row 1: Full Name | Age | Guardian Name
+   Row 2: Mobile    | State | District
+   Row 3: Pincode   | Complete Address | Photo
+   ========================================================= */
+
+@media (min-width: 701px) {
+
+  .registration-form > .pincode-field {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  .registration-form > .lower-form-grid {
+    grid-column: 2 / 4 !important;
+    grid-row: 3 !important;
+    grid-template-columns: 1fr 1fr !important;
+  }
+}

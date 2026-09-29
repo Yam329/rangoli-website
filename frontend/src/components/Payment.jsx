@@ -139,7 +139,8 @@ const Payment = ({
       return;
     }
 
-    if (!amount || ![799, 899, 999].includes(amount)) {
+    // Coupon amounts are set in the admin dashboard; ₹999 is the old (legacy) fee.
+    if (!Number.isInteger(amount) || amount < 1 || amount > 999) {
       setError("Invalid registration amount.");
       return;
     }

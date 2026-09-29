@@ -23,31 +23,26 @@ const API_URL =
    REGISTRATION FEE
 ========================================================= */
 
-const BASE_REGISTRATION_FEE = 999;
+const BASE_REGISTRATION_FEE = 799;
 
-const VALID_REGISTRATION_AMOUNTS = [
-  999,
-  899,
-  799,
-];
+// Coupons are managed in the admin dashboard and checked by the
+// backend, so a coupon amount can be anything from ₹1 to the base fee.
+const isValidRegistrationAmount = (amount, couponCode) =>
+  couponCode
+    ? Number.isInteger(amount) && amount >= 1 && amount <= BASE_REGISTRATION_FEE
+    : amount === BASE_REGISTRATION_FEE;
 
 
 /* =========================================================
-   COUPONS
+   PARTICIPANT AGE
 ========================================================= */
 
-const COUPONS = {
-  UDAYBHANU0246: {
-    code: "UDAYBHANU0246",
-    type: "UDAYBHANU",
-    amount: 899,
-  },
+const MIN_AGE = 3;
+const MAX_AGE = 100;
 
-  GTST0246: {
-    code: "GTST0246",
-    type: "GTST",
-    amount: 799,
-  },
+const isValidAge = (value) => {
+  const n = Number(value);
+  return Number.isInteger(n) && n >= MIN_AGE && n <= MAX_AGE;
 };
 
 
@@ -178,7 +173,10 @@ function Register() {
   const [mobile, setMobile] =
     useState("");
 
-  const [dob, setDob] =
+  const [age, setAge] =
+    useState("");
+
+  const [guardianName, setGuardianName] =
     useState("");
 
   const [state, setState] =
@@ -275,14 +273,10 @@ function Register() {
 
         if (!couponCode) {
 
+          // 899 = UDAYBHANU under the old ₹999 fee
           if (savedAmount === 899) {
             couponCode = "UDAYBHANU0246";
             couponType = "UDAYBHANU";
-          }
-
-          if (savedAmount === 799) {
-            couponCode = "GTST0246";
-            couponType = "GTST";
           }
         }
 
@@ -662,14 +656,10 @@ const initiateEasebuzzPayment = async (registrationId) => {
       let recoveredCouponType =
         recoveredRegistration.coupon_type || null;
 
+      // 899 = UDAYBHANU under the old ₹999 fee
       if (!recoveredCouponCode && recoveredAmount === 899) {
         recoveredCouponCode = "UDAYBHANU0246";
-        recoveredCouponType = "SUMA";
-      }
-
-      if (!recoveredCouponCode && recoveredAmount === 799) {
-        recoveredCouponCode = "GTST0246";
-        recoveredCouponType = "GTST";
+        recoveredCouponType = "UDAYBHANU";
       }
 
       const recoveredPackage = {
@@ -774,10 +764,20 @@ return;
       }
 
 
-      if (!dob) {
+      if (!isValidAge(age)) {
 
         alert(
-          "Please select your date of birth."
+          "Please enter a valid age."
+        );
+
+        return;
+      }
+
+
+      if (!guardianName.trim()) {
+
+        alert(
+          "Please enter guardian name."
         );
 
         return;
@@ -876,25 +876,6 @@ return;
         );
 
 
-      /*
-        IMPORTANT:
-        Only these amounts are valid.
-      */
-
-      if (
-        !VALID_REGISTRATION_AMOUNTS.includes(
-          amount
-        )
-      ) {
-
-        alert(
-          "Invalid registration amount."
-        );
-
-        return;
-      }
-
-
       const couponCode =
         feeData.coupon_code ||
         null;
@@ -906,36 +887,22 @@ return;
 
 
       /*
-        If a coupon exists, make sure
-        the amount matches the coupon.
+        The coupon itself was checked by the backend when
+        it was applied, and is checked again on submit.
       */
 
-      if (couponCode) {
+      if (
+        !isValidRegistrationAmount(
+          amount,
+          couponCode
+        )
+      ) {
 
-        const coupon =
-          COUPONS[couponCode];
+        alert(
+          "Invalid registration amount."
+        );
 
-
-        if (!coupon) {
-
-          alert(
-            "Invalid coupon selected."
-          );
-
-          return;
-        }
-
-
-        if (
-          amount !== coupon.amount
-        ) {
-
-          alert(
-            "Invalid coupon amount."
-          );
-
-          return;
-        }
+        return;
       }
 
 
@@ -1101,9 +1068,11 @@ return;
          VALIDATE AMOUNT
       ------------------------------------------------ */
 
+      // The coupon itself is re-checked by the backend on submit.
       if (
-        !VALID_REGISTRATION_AMOUNTS.includes(
-          packageAmount
+        !isValidRegistrationAmount(
+          packageAmount,
+          couponCode
         )
       ) {
 
@@ -1114,44 +1083,6 @@ return;
         setCurrentStep(2);
 
         return;
-      }
-
-
-      /* -----------------------------------------------
-         VALIDATE COUPON
-      ------------------------------------------------ */
-
-      if (couponCode) {
-
-        const coupon =
-          COUPONS[couponCode];
-
-
-        if (!coupon) {
-
-          alert(
-            "Invalid coupon selected."
-          );
-
-          setCurrentStep(2);
-
-          return;
-        }
-
-
-        if (
-          packageAmount !==
-          coupon.amount
-        ) {
-
-          alert(
-            "Invalid coupon amount."
-          );
-
-          setCurrentStep(2);
-
-          return;
-        }
       }
 
 
@@ -1185,10 +1116,22 @@ return;
       }
 
 
-      if (!dob) {
+      if (!isValidAge(age)) {
 
         alert(
-          "Please select your date of birth."
+          "Please enter a valid age."
+        );
+
+        setCurrentStep(1);
+
+        return;
+      }
+
+
+      if (!guardianName.trim()) {
+
+        alert(
+          "Please enter guardian name."
         );
 
         setCurrentStep(1);
@@ -1287,8 +1230,14 @@ return;
 
 
         formData.append(
-          "dob",
-          dob
+          "age",
+          age
+        );
+
+
+        formData.append(
+          "guardian_name",
+          guardianName.trim()
         );
 
 
@@ -1899,8 +1848,9 @@ return;
 
   participant={{
     fullName,
+    age,
+    guardianName,
     mobile,
-    dob,
     state,
     district,
     pincode,
@@ -2126,33 +2076,6 @@ return;
 
           <div className="register-grid">
 
-            {/* DATE OF BIRTH */}
-
-            <div className="register-field">
-
-              <label>
-                Date of Birth{" "}
-                <span>*</span>
-              </label>
-
-              <div className="field-box">
-
-                <input
-                  type="date"
-                  value={dob}
-                  onChange={(e) =>
-                    setDob(
-                      e.target.value
-                    )
-                  }
-                  required
-                />
-
-              </div>
-
-            </div>
-
-
             {/* FULL NAME */}
 
             <div className="register-field">
@@ -2170,6 +2093,66 @@ return;
                   value={fullName}
                   onChange={(e) =>
                     setFullName(
+                      e.target.value
+                    )
+                  }
+                  required
+                />
+
+              </div>
+
+            </div>
+
+
+            {/* AGE */}
+
+            <div className="register-field">
+
+              <label>
+                Age{" "}
+                <span>*</span>
+              </label>
+
+              <div className="field-box">
+
+                <input
+                  type="text"
+                  placeholder="Enter your age"
+                  value={age}
+                  onChange={(e) =>
+                    setAge(
+                      e.target.value
+                        .replace(/\D/g, "")
+                        .slice(0, 3)
+                    )
+                  }
+                  maxLength={3}
+                  inputMode="numeric"
+                  required
+                />
+
+              </div>
+
+            </div>
+
+
+            {/* GUARDIAN NAME */}
+
+            <div className="register-field">
+
+              <label>
+                Guardian Name{" "}
+                <span>*</span>
+              </label>
+
+              <div className="field-box">
+
+                <input
+                  type="text"
+                  placeholder="Enter parent / guardian name"
+                  value={guardianName}
+                  onChange={(e) =>
+                    setGuardianName(
                       e.target.value
                     )
                   }

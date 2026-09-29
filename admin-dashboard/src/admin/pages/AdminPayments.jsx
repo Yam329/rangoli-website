@@ -508,6 +508,20 @@ const AdminPayments = () => {
       </span>
     </button>
 
+
+    <button
+      type="button"
+      className="admin-nav-item"
+      onClick={() =>
+        navigate("/admin/coupons")
+      }
+    >
+      <span className="admin-nav-icon"></span>
+      <span className="admin-nav-label">
+        Coupons
+      </span>
+    </button>
+
   </nav>
 
 

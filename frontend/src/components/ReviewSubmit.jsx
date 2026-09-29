@@ -50,7 +50,7 @@ function ReviewSubmit({
   const registrationAmount = Number(
     registrationData?.amount ||
     registrationData?.package_amount ||
-    999
+    799
   );
 
 
@@ -61,7 +61,7 @@ function ReviewSubmit({
 
   const baseAmount = Number(
     registrationData?.base_amount ||
-    999
+    799
   );
 
 
@@ -217,6 +217,40 @@ function ReviewSubmit({
 
                 <strong>
                   {participant?.fullName ||
+                    "Not provided"}
+                </strong>
+
+              </div>
+
+
+
+              {/* AGE */}
+
+              <div className="data-row">
+
+                <span>
+                  Age
+                </span>
+
+                <strong>
+                  {participant?.age ||
+                    "Not provided"}
+                </strong>
+
+              </div>
+
+
+
+              {/* GUARDIAN NAME */}
+
+              <div className="data-row">
+
+                <span>
+                  Guardian Name
+                </span>
+
+                <strong>
+                  {participant?.guardianName ||
                     "Not provided"}
                 </strong>
 

@@ -1,0 +1,269 @@
+/* =========================================================
+   ADMIN COUPONS
+   Builds on admin-queries.css (layout, table, modal).
+   ========================================================= */
+
+.coupon-topbar-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.coupon-primary-button {
+  height: 40px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 9px;
+  background: #315fd4;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.coupon-primary-button:hover:not(:disabled) {
+  background: #264db3;
+}
+
+.coupon-primary-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ---------- Table ---------- */
+
+.coupon-code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: 0.3px;
+}
+
+.coupon-subtext {
+  margin-top: 3px;
+  color: #8a94a6;
+  font-size: 10px;
+}
+
+.coupon-dates {
+  color: #5d677a;
+  font-size: 10px;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.coupon-state {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.coupon-state-active {
+  background: #e8f7ef;
+  color: #278b59;
+}
+
+.coupon-state-scheduled {
+  background: #edf2ff;
+  color: #315fd4;
+}
+
+.coupon-state-expired {
+  background: #fff8ea;
+  color: #a96e0b;
+}
+
+.coupon-state-disabled {
+  background: #f1f3f7;
+  color: #7a8496;
+}
+
+.coupon-row-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.coupon-toggle-button,
+.coupon-delete-button,
+.coupon-cancel-button {
+  height: 31px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.coupon-toggle-button {
+  border: 1px solid #e3d3ad;
+  background: #fffaf0;
+  color: #a96e0b;
+}
+
+.coupon-delete-button {
+  border: 1px solid #f1c5cb;
+  background: #fff0f2;
+  color: #c44957;
+}
+
+.coupon-row-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---------- Modal form ---------- */
+
+.coupon-modal {
+  width: min(760px, 100%);
+}
+
+.coupon-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 18px;
+  padding: 22px 24px;
+}
+
+.coupon-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.coupon-field-wide {
+  grid-column: 1 / -1;
+}
+
+.coupon-field > span {
+  color: #3d485a;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.coupon-field input[type="text"],
+.coupon-field input[type="number"],
+.coupon-field input[type="datetime-local"],
+.coupon-field select {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #dfe5ef;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #1c2940;
+  font-size: 13px;
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.coupon-field input:focus,
+.coupon-field select:focus {
+  border-color: #315fd4;
+  box-shadow: 0 0 0 3px rgba(49, 95, 212, 0.12);
+}
+
+.coupon-field small {
+  color: #969eac;
+  font-size: 10px;
+}
+
+.coupon-preview {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f5f8ff;
+  border: 1px dashed #c9d6f5;
+}
+
+.coupon-preview span {
+  color: #5d677a;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.coupon-preview strong {
+  color: #315fd4;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.coupon-preview em {
+  color: #278b59;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.coupon-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+}
+
+.coupon-switch input {
+  width: 18px;
+  height: 18px;
+  accent-color: #315fd4;
+  cursor: pointer;
+}
+
+.coupon-switch b {
+  color: #1c2940;
+  font-size: 13px;
+}
+
+.coupon-form-error {
+  margin: 0 24px 16px;
+}
+
+.coupon-modal-actions .coupon-cancel-button {
+  height: 40px;
+  padding: 0 18px;
+  border: 1px solid #dfe5ef;
+  background: #ffffff;
+  color: #3d485a;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .coupon-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .coupon-topbar-actions {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Fit the table without horizontal scroll ---------- */
+
+.coupon-table td,
+.coupon-table th {
+  padding-left: 12px;
+  padding-right: 12px;
+  text-align: left;
+}
+
+.coupon-table td.coupon-dates {
+  white-space: normal;
+  min-width: 150px;
+}
+
+.coupon-row-actions {
+  flex-wrap: nowrap;
+}
+
+.coupon-row-actions button {
+  padding: 0 9px;
+}
+
+/* The admin app's global #root styles centre text; keep the form left-aligned */
+.coupon-modal,
+.coupon-modal .query-modal-header {
+  text-align: left;
+}

@@ -5,6 +5,7 @@ import AdminDashboard from "./admin/pages/AdminDashboard";
 import AdminRegistrations from "./admin/pages/AdminRegistrations";
 import AdminPayments from "./admin/pages/AdminPayments";
 import AdminQueries from "./admin/pages/AdminQueries";
+import AdminCoupons from "./admin/pages/AdminCoupons";
 import ProtectedAdminRoute from "./admin/components/ProtectedAdminRoute";
 
 function App() {
@@ -47,6 +48,15 @@ function App() {
           element={
             <ProtectedAdminRoute>
               <AdminQueries />
+            </ProtectedAdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin/coupons"
+          element={
+            <ProtectedAdminRoute>
+              <AdminCoupons />
             </ProtectedAdminRoute>
           }
         />

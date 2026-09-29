@@ -78,7 +78,7 @@ a {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background: url('/hero-banner-bg.jpg') no-repeat center right / cover;
+  background: url('/home_page.png') no-repeat center right / cover;
   padding: 95px 0 35px;
   box-sizing: border-box;
 }
@@ -410,7 +410,7 @@ a {
     padding: 95px 16px 40px;
     background-image:
       linear-gradient(180deg, rgba(255, 253, 248, 0.92) 0%, rgba(255, 245, 248, 0.95) 100%),
-      url('/hero-banner-bg.jpg');
+      url('/home_page.png');
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -5464,4 +5464,114 @@ a {
 
 .contact-form-card .contact-action-privacy {
   margin-top: 12px;
+}
+
+
+/* =========================================================
+   REGISTRATION FEE — WHAT'S INCLUDED
+========================================================= */
+
+.registration-fee-card {
+  width: 500px;
+  max-width: 100%;
+  min-height: 0;
+}
+
+.registration-fee-text {
+  margin-bottom: 22px;
+}
+
+.registration-fee-includes {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 18px 20px 8px;
+  box-sizing: border-box;
+  text-align: left;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(229, 179, 61, 0.35);
+}
+
+.registration-fee-includes-title {
+  margin-bottom: 10px;
+  text-align: center;
+  color: #0f5d70;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.registration-fee-includes ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.registration-fee-includes li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+}
+
+.registration-fee-includes li + li {
+  border-top: 1px dashed rgba(229, 179, 61, 0.45);
+}
+
+.registration-fee-include-icon {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #d91c78;
+  font-size: 17px;
+  background: #fde8f1;
+}
+
+.registration-fee-includes li strong {
+  display: block;
+  color: #1d3b4a;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.registration-fee-includes li small {
+  display: block;
+  color: #6a8595;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.registration-fee-coupon {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 0 0 22px;
+  color: #b3165f;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .registration-fee-includes {
+    padding: 14px 14px 6px;
+  }
+
+  .registration-fee-coupon {
+    font-size: 12px;
+    text-align: center;
+  }
 }

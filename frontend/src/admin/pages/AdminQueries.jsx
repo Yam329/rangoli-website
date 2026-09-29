@@ -397,6 +397,17 @@ const deleteQuery = async (queryId) => {
             Payments
           </button>
 
+
+          <button
+            type="button"
+            onClick={() =>
+              navigate("/admin/coupons")
+            }
+          >
+            <span>%</span>
+            Coupons
+          </button>
+
         </nav>
 
       </aside>

@@ -68,7 +68,7 @@ function Header() {
 
           <button
             type="button"
-            onClick={() => goToSection("awards")}
+            onClick={() => goToSection("prizes")}
           >
             Awards
           </button>
@@ -117,7 +117,7 @@ function Header() {
             <button type="button" className="mobile-nav-item" onClick={() => goToSection("guidelines")}>
               Guidelines
             </button>
-            <button type="button" className="mobile-nav-item" onClick={() => goToSection("awards")}>
+            <button type="button" className="mobile-nav-item" onClick={() => goToSection("prizes")}>
               Awards
             </button>
             <button type="button" className="mobile-nav-item" onClick={() => goToSection("contact")}>

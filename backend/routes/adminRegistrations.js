@@ -24,6 +24,8 @@ router.get("/", async (req, res) => {
         full_name,
         mobile,
         dob,
+        age,
+        guardian_name,
         address,
         district,
         state,
@@ -103,6 +105,8 @@ router.get(
           full_name,
           mobile,
           dob,
+          age,
+          guardian_name,
           address,
           district,
           state,
@@ -237,6 +241,8 @@ router.put(
         full_name,
         mobile,
         dob,
+        age,
+        guardian_name,
         address,
         district,
         state,
@@ -269,6 +275,16 @@ router.put(
 
       if (dob !== undefined) {
         updateData.dob = dob;
+      }
+
+      if (age !== undefined) {
+        updateData.age =
+          age === "" || age === null ? null : Number(age);
+      }
+
+      if (guardian_name !== undefined) {
+        updateData.guardian_name =
+          String(guardian_name).trim();
       }
 
       if (address !== undefined) {

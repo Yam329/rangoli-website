@@ -137,8 +137,9 @@ function AdminRegistrations() {
     const headers = [
       "Registration ID",
       "Full Name",
+      "Age",
+      "Guardian Name",
       "Mobile",
-      "DOB",
       "State",
       "District",
       "Pincode",
@@ -156,8 +157,9 @@ function AdminRegistrations() {
     const rows = registrations.map((item) => [
       item.registration_id,
       item.full_name,
+      item.age,
+      item.guardian_name,
       item.mobile,
-      item.dob,
       item.state,
       item.district,
       item.pincode,

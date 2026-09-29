@@ -139,7 +139,8 @@ function AdminRegistrationDetails({
           body: JSON.stringify({
             full_name: details.full_name,
             mobile: details.mobile,
-            dob: details.dob,
+            age: details.age,
+            guardian_name: details.guardian_name,
             state: details.state,
             district: details.district,
             pincode: details.pincode,
@@ -573,12 +574,24 @@ function AdminRegistrationDetails({
           />
 
           <Field
-            label="Date of Birth"
-            value={details.dob}
+            label="Age"
+            value={details.age}
             editable={editMode}
             onChange={(value) =>
               updateField(
-                "dob",
+                "age",
+                value
+              )
+            }
+          />
+
+          <Field
+            label="Guardian Name"
+            value={details.guardian_name}
+            editable={editMode}
+            onChange={(value) =>
+              updateField(
+                "guardian_name",
                 value
               )
             }

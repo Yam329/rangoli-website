@@ -1,28 +1,19 @@
 import React, { useState } from "react";
 import "./CompetitionDetails.css";
 
-const BASE_FEE = 999;
-const COUPONS = {
-  UDAYBHANU0246: {
-    code: "UDAYBHANU0246",
-    type: "UDAYBHANU",
-    amount: 899,
-    title: "Uday Bhanu Offer",
-    description: "Special registration offer",
-  },
+const BASE_FEE = 799;
 
-  GTST0246: {
-    code: "GTST0246",
-    type: "GTST",
-    amount: 799,
-    title: "GTST Student Offer",
-    description: "Special offer for students registered in GTST",
-  },
-};
+const API_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000"
+).replace(/\/$/, "");
+
+const API_ROOT = API_URL.endsWith("/api") ? API_URL : `${API_URL}/api`;
+
 function CompetitionDetails({ onPrevious, onContinue }) {
   const [couponCode, setCouponCode] = useState("");
   const [appliedCoupon, setAppliedCoupon] = useState(null);
   const [couponError, setCouponError] = useState("");
+  const [checkingCoupon, setCheckingCoupon] = useState(false);
 
   const finalAmount = appliedCoupon?.amount || BASE_FEE;
 
@@ -31,7 +22,7 @@ function CompetitionDetails({ onPrevious, onContinue }) {
     setCouponError("");
   };
 
-  const handleApplyCoupon = () => {
+  const handleApplyCoupon = async () => {
     const code = couponCode.trim().toUpperCase();
 
     if (!code) {
@@ -40,16 +31,32 @@ function CompetitionDetails({ onPrevious, onContinue }) {
       return;
     }
 
-    const coupon = COUPONS[code];
+    try {
+      setCheckingCoupon(true);
+      setCouponError("");
 
-    if (!coupon) {
+      const response = await fetch(`${API_ROOT}/coupons/validate`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || !data.success) {
+        setAppliedCoupon(null);
+        setCouponError(data.message || "Invalid coupon code. Please check and try again.");
+        return;
+      }
+
+      setAppliedCoupon(data.coupon);
+    } catch (error) {
+      console.error("COUPON VALIDATE ERROR:", error);
       setAppliedCoupon(null);
-      setCouponError("Invalid coupon code. Please check and try again.");
-      return;
+      setCouponError("Unable to check coupon right now. Please try again.");
+    } finally {
+      setCheckingCoupon(false);
     }
-
-    setAppliedCoupon(coupon);
-    setCouponError("");
   };
 
   const handleProceed = () => {
@@ -127,7 +134,7 @@ function CompetitionDetails({ onPrevious, onContinue }) {
 
             {appliedCoupon && (
               <span className="fee-original-price">
-                ₹999
+                ₹{BASE_FEE}
               </span>
             )}
 
@@ -196,8 +203,9 @@ function CompetitionDetails({ onPrevious, onContinue }) {
                   type="button"
                   className="coupon-apply-button"
                   onClick={handleApplyCoupon}
+                  disabled={checkingCoupon}
                 >
-                  Apply
+                  {checkingCoupon ? "Checking..." : "Apply"}
                 </button>
               ) : (
                 <button
@@ -238,14 +246,14 @@ function CompetitionDetails({ onPrevious, onContinue }) {
           {appliedCoupon && (
             <div
               className={`applied-offer ${
-                appliedCoupon.type === "GTST"
+                String(appliedCoupon.code).startsWith("GTST")
                   ? "gtst-offer"
                   : "UDAYBHANU-offer"
               }`}
             >
 
               <div className="offer-icon">
-                {appliedCoupon.type === "GTST"
+                {String(appliedCoupon.code).startsWith("GTST")
                   ? "🎓"
                   : "✦"}
               </div>
